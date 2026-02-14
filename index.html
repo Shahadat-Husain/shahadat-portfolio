@@ -638,55 +638,112 @@
             font-size: 24px;
         }
         
-        .work-samples {
-            margin-top: 100px;
-        }
-        
-        .work-samples h3 {
-            font-size: 52px;
-            margin-bottom: 80px;
-            text-align: center;
-            font-weight: 900;
-            letter-spacing: -2px;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .work-grid {
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            perspective: 1000px;
         }
         
-        .work-item {
+        .portfolio-item {
             position: relative;
             border-radius: 24px;
             overflow: hidden;
-            aspect-ratio: 1;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.05);
             background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(80px) rotateX(-15deg);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        .work-item:hover {
-            transform: translateY(-16px) scale(1.05);
-            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.5);
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 40px 80px rgba(99, 102, 241, 0.5);
             border-color: var(--primary);
             z-index: 10;
         }
         
-        .work-item img {
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .portfolio-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .portfolio-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            overflow: hidden;
+            background: var(--bg-darker);
+        }
+        
+        .portfolio-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 20px;
         }
         
-        .work-item:hover img {
-            transform: scale(1.1);
+        .portfolio-item:hover img {
+            transform: scale(1.15);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(168, 85, 247, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay-content {
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay-content {
+            transform: translateY(0);
+        }
+        
+        .portfolio-overlay h4 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: white;
+        }
+        
+        .portfolio-overlay p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
         }
         
         .cert-container {
@@ -1108,8 +1165,9 @@
                 grid-template-columns: 1fr;
             }
             
-            .work-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 32px;
             }
         }
         
@@ -1172,9 +1230,9 @@
                 grid-template-columns: 1fr;
             }
             
-            .work-grid {
+            .portfolio-grid {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 28px;
             }
             
             .modal-content {
@@ -1243,7 +1301,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#case-studies">Portfolio</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -1387,38 +1445,290 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="work-samples">
-                <h3 class="fade-in">My Work Portfolio</h3>
-                <div class="work-grid">
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/chWKDcvd/FB-IMG-1754975518924.jpg" alt="Work Sample 1"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/7DQYcZZ/FB-IMG-1752520075720.jpg" alt="Work Sample 2"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/qLz2fg75/FB-IMG-1754975623506.jpg" alt="Work Sample 3"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/QFXgtNRN/FB-IMG-1757012633571.jpg" alt="Work Sample 4"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/JWTGwzkQ/FB-IMG-1754975563769.jpg" alt="Work Sample 5"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/GQKvJWMN/FB-IMG-1752520048811.jpg" alt="Work Sample 6"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/DfLbpFCP/FB-IMG-1754118804882.jpg" alt="Work Sample 7"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/SXwBr638/FB-IMG-1755548967703.jpg" alt="Work Sample 8"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/KjFCM3L3/FB-IMG-1752520061811.jpg" alt="Work Sample 9"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/K3Fbhvn/google-ads.jpg" alt="Work Sample 10"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/bg1zhQQd/FB-IMG-1752520070354.jpg" alt="Work Sample 11"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/svc4gSNF/FB-IMG-1754118721846.jpg" alt="Work Sample 12"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/DDB99mzX/FB-IMG-1752520053767.jpg" alt="Work Sample 13"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/YmTDvTt/FB-IMG-1752520065654.jpg" alt="Work Sample 14"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/LDs6yKyg/FB-IMG-1757012640222.jpg" alt="Work Sample 15"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/pvRDHJc2/FB-IMG-1754975542038.jpg" alt="Work Sample 16"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/yB7Kwq6J/FB-IMG-1752520078350.jpg" alt="Work Sample 17"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/PGtZ22st/FB-IMG-1764186776757.jpg" alt="Work Sample 18"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/F4J3K7wP/FB-IMG-1754975574648.jpg" alt="Work Sample 19"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/xKNLxwJj/FB-IMG-1752520051276.jpg" alt="Work Sample 20"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/PZjMzZL1/FB-IMG-1752520063966.jpg" alt="Work Sample 21"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/Fbc5jnjq/FB-IMG-1754118748862.jpg" alt="Work Sample 22"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/XZGhyFCB/FB-IMG-1752520046701.jpg" alt="Work Sample 23"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/pr0ZnjN9/FB-IMG-1752520073720.jpg" alt="Work Sample 24"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/ZzSjy403/FB-IMG-1752520057302.jpg" alt="Work Sample 25"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/4wPpSv32/FB-IMG-1754118719085.jpg" alt="Work Sample 26"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/ynk7pnZB/FB-IMG-1752520068286.jpg" alt="Work Sample 27"></div>
-                    <div class="work-item fade-in"><img src="https://i.ibb.co/8LCy6hSC/FB-IMG-1754118894001.jpg" alt="Work Sample 28"></div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Portfolio</h2>
+                <p>Results that speak louder than words</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="Campaign Result 1" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Performance Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="Campaign Result 2" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Paid Advertising</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="Campaign Result 3" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Conversion Optimization</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="Campaign Result 4" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Meta Ads</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="Campaign Result 5" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Google Ads</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="Campaign Result 6" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Lead Generation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="Campaign Result 7" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>E-commerce Growth</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="Campaign Result 8" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Analytics & Tracking</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="Campaign Result 9" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Campaign Performance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="Campaign Result 10" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>ROI Optimization</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_9_qi1gyg.jpg" alt="Campaign Result 11" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Social Media Ads</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_7_rc7ccy.jpg" alt="Campaign Result 12" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Growth Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_24_evc0sd.jpg" alt="Campaign Result 13" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Conversion Tracking</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_8_jngsg8.jpg" alt="Campaign Result 14" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Performance Metrics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_25_y8bh1g.jpg" alt="Campaign Result 15" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Digital Marketing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_6_mm3vff.jpg" alt="Campaign Result 16" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Ad Campaigns</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_5_nzztmi.jpg" alt="Campaign Result 17" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Marketing Strategy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_4_tfvqdv.jpg" alt="Campaign Result 18" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Audience Targeting</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_23_fpdmtt.jpg" alt="Campaign Result 19" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Campaign Results</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_22_nw30ms.jpg" alt="Campaign Result 20" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Marketing Analytics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_20_zrstpz.jpg" alt="Campaign Result 21" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Paid Media</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_3_a4wsgm.jpg" alt="Campaign Result 22" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Revenue Growth</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_21_hhhhja.jpg" alt="Campaign Result 23" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Performance Data</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_2_cj796l.jpg" alt="Campaign Result 24" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Ad Performance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image-wrapper">
+                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_1_w1edvj.jpg" alt="Campaign Result 25" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-overlay-content">
+                            <h4>Campaign Result</h4>
+                            <p>Success Metrics</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1632,6 +1942,7 @@
             });
         });
 
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -1647,6 +1958,26 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+        // Portfolio items staggered animation
+        const portfolioObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, entry.target.dataset.index * 80);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+            item.dataset.index = index;
+            portfolioObserver.observe(item);
+        });
+
+        // Stats counter animation
         const statNumbers = document.querySelectorAll('.stat-number');
         let statsAnimated = false;
 
