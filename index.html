@@ -3,1646 +3,1013 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Shahadat Husain | Performance Marketer | Paid Ads & CRO Expert</title>
-    <meta name="description" content="Performance marketing specialist with £50k+ ad spend managed. Expert in Meta Ads, Google Ads, GA4, Conversion API & CRO. Book a free audit today.">
-    <meta name="keywords" content="performance marketing, paid ads, Meta ads, Google ads, GA4, conversion tracking, CRO, local SEO">
+    <title>Md Shahadat Husain | Performance Marketing Expert</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
-            --accent: #10b981;
-            --accent-dark: #059669;
-            --bg-dark: #0a0e27;
-            --bg-darker: #050816;
-            --bg-card: #151a35;
-            --text-primary: #ffffff;
-            --text-secondary: #e2e8f0;
-            --text-muted: #94a3b8;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
-            --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.24);
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #f59e0b;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
         }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-darker);
-            color: var(--text-primary);
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background: var(--light);
             overflow-x: hidden;
-            position: relative;
         }
-        
-        /* Page Loader */
-        .page-loader {
-            position: fixed;
-            inset: 0;
-            background: var(--bg-darker);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-        
-        .page-loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .loader-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(99, 102, 241, 0.1);
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Floating Background Shapes */
-        .bg-shapes {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0;
-        }
-        
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            animation: floatShape 20s infinite ease-in-out;
-        }
-        
-        .shape-1 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-            top: -200px;
-            right: -200px;
-            animation-delay: 0s;
-        }
-        
-        .shape-2 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-            bottom: -150px;
-            left: -150px;
-            animation-delay: 5s;
-        }
-        
-        .shape-3 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, #a855f7 0%, transparent 70%);
-            top: 50%;
-            left: 50%;
-            animation-delay: 10s;
-        }
-        
-        @keyframes floatShape {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(50px, -50px) scale(1.1); }
-            66% { transform: translate(-30px, 30px) scale(0.9); }
-        }
-        
-        /* Cursor Glow Effect */
-        .cursor-glow {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            mix-blend-mode: screen;
-            filter: blur(20px);
-            opacity: 0.5;
-            transition: transform 0.15s ease-out;
-        }
-        
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 32px;
-            position: relative;
-            z-index: 1;
-        }
-        
+
         /* Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: transparent;
-            backdrop-filter: blur(0px);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-bottom: 1px solid transparent;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
-        
-        header.scrolled {
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: var(--shadow-md);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
+
         nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 0;
-            transition: padding 0.4s;
         }
-        
-        header.scrolled nav {
-            padding: 18px 0;
-        }
-        
+
         .logo {
-            font-size: 28px;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -1px;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dark);
         }
-        
+
+        .logo span {
+            color: var(--primary);
+        }
+
         .nav-links {
             display: flex;
-            gap: 48px;
+            gap: 40px;
             list-style: none;
-            align-items: center;
         }
-        
+
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--dark);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 15px;
-            transition: all 0.3s;
-            position: relative;
-            padding: 8px 0;
+            transition: color 0.3s;
         }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
+
         .nav-links a:hover {
             color: var(--primary);
         }
-        
-        .nav-links a:hover::after {
-            width: 100%;
+
+        .btn-contact {
+            background: var(--dark);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
         }
-        
-        /* Dark/Light Mode Toggle */
-        .theme-toggle {
-            width: 48px;
-            height: 48px;
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+
+        .btn-contact:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 80px 40px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-main {
+            background: var(--dark);
+            padding: 80px 60px;
+            border-radius: 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-main h1 {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-main p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--dark);
+            padding: 16px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-card.yellow {
+            background: #fef08a;
+        }
+
+        .stat-card.green {
+            background: #bbf7d0;
+        }
+
+        .stat-card.blue {
+            background: #bfdbfe;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card.yellow {
+            background: #fef9c3;
+        }
+
+        .service-card.green {
+            background: #d1fae5;
+        }
+
+        .service-card.blue {
+            background: #dbeafe;
+        }
+
+        .service-card.purple {
+            background: #e9d5ff;
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Portfolio Slider Section */
+        .portfolio-section {
+            padding: 100px 40px;
+            background: var(--light);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray);
+        }
+
+        .portfolio-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--darker);
+            padding: 80px;
+            position: relative;
+        }
+
+        .slide img {
+            max-width: 80%;
+            max-height: 600px;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-info {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+        }
+
+        .slide-info h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .slide-info p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slider-dot.active {
+            width: 30px;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .slider-arrow.prev {
+            left: 30px;
+        }
+
+        .slider-arrow.next {
+            right: 30px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            margin-top: 40px;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-item span {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .skill-level {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 40px;
+            background: var(--dark);
+            color: white;
+        }
+
+        .contact-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-info h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .theme-toggle:hover {
-            background: var(--primary);
-            transform: scale(1.05);
-        }
-        
-        .theme-toggle svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--text-secondary);
-            transition: fill 0.3s;
-        }
-        
-        .theme-toggle:hover svg {
-            fill: white;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 120px;
-            padding-bottom: 80px;
-            position: relative;
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 120px;
-            align-items: center;
-        }
-        
-        .hero-text {
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero-text .subtitle {
-            font-size: 14px;
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 700;
-        }
-        
-        .hero-text h1 {
-            font-size: 76px;
-            font-weight: 900;
-            line-height: 1.05;
-            margin-bottom: 28px;
-            background: linear-gradient(135deg, #ffffff 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -3px;
-        }
-        
-        .hero-text p {
-            font-size: 22px;
-            color: var(--text-secondary);
-            margin-bottom: 48px;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 18px 42px;
-            font-size: 17px;
-            font-weight: 700;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-        
-        .btn:hover::before {
-            opacity: 1;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(99, 102, 241, 0.5);
-        }
-        
-        .btn-download {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-download:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-4px);
-        }
-        
-        .hero-image {
-            position: relative;
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
-        }
-        
-        .image-wrapper {
-            position: relative;
-        }
-        
-        .image-wrapper::before {
-            content: '';
-            position: absolute;
-            inset: -30px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3));
-            border-radius: 32px;
-            filter: blur(50px);
-            z-index: -1;
-            animation: pulse 4s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-        }
-        
-        .hero-image img {
-            width: 100%;
-            max-width: 480px;
-            border-radius: 24px;
-            box-shadow: var(--shadow-xl);
-            border: 6px solid rgba(99, 102, 241, 0.2);
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .hero-image img:hover {
-            transform: scale(1.03) rotate(1deg);
-        }
-        
-        /* Stats Row */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 48px;
-            margin-top: 120px;
-            padding: 80px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .stat-item {
-            text-align: center;
-            transition: transform 0.4s;
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-8px);
-        }
-        
-        .stat-number {
-            font-size: 56px;
-            font-weight: 900;
-            color: var(--accent);
-            margin-bottom: 12px;
-            display: block;
-            letter-spacing: -2px;
-        }
-        
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 15px;
-            font-weight: 600;
-        }
-        
-        /* Section Styles */
-        section {
-            padding: 140px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .section-title h2 {
-            font-size: 56px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-        }
-        
-        .section-title p {
-            font-size: 20px;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 100px;
-            align-items: center;
-        }
-        
-        .about-text p {
-            margin-bottom: 28px;
-            color: var(--text-secondary);
-            font-size: 18px;
-            line-height: 1.8;
-            font-weight: 400;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
-        .skill-item {
-            background: var(--bg-card);
-            padding: 24px;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            font-weight: 600;
-            color: var(--text-secondary);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            text-align: center;
-        }
-        
-        .skill-item:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            background: rgba(99, 102, 241, 0.05);
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 36px;
-        }
-        
-        .service-card {
-            background: var(--bg-card);
-            padding: 48px 36px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            text-align: center;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-lg);
-            background: rgba(99, 102, 241, 0.03);
-        }
-        
-        .service-icon {
-            font-size: 64px;
-            margin-bottom: 28px;
-            display: block;
-            transition: transform 0.5s;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-        
-        .service-card h3 {
             font-size: 24px;
-            margin-bottom: 16px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
         }
-        
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.7;
-        }
-        
-        /* Case Studies */
-        .case-studies-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 48px;
-        }
-        
-        .case-study {
-            background: var(--bg-card);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .case-study:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent);
-        }
-        
-        .case-study-images {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-        }
-        
-        .case-study-images img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .case-study:hover .case-study-images img {
-            transform: scale(1.1);
-        }
-        
-        .case-study-image {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(16, 185, 129, 0.3));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 72px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .case-study-content {
-            padding: 40px;
-        }
-        
-        .case-study-content h3 {
-            font-size: 28px;
-            margin-bottom: 28px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-        
-        .case-study-content ul {
-            list-style: none;
-        }
-        
-        .case-study-content li {
-            padding: 14px 0;
-            padding-left: 36px;
-            position: relative;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: 16px;
-        }
-        
-        .case-study-content li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 20px;
-        }
-        
-        /* Portfolio Fullscreen Section */
-        #portfolio {
-            padding: 0;
-            background: var(--bg-darker);
-        }
-        
-        .portfolio-fullscreen {
-            position: relative;
-        }
-        
-        .portfolio-slide {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: var(--bg-darker);
-        }
-        
-        .portfolio-slide-bg {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .portfolio-slide.scrolling .portfolio-slide-bg {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-slide-bg img {
-            max-width: 70%;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 16px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .portfolio-slide-content {
-            position: absolute;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .portfolio-slide.active .portfolio-slide-content {
-            opacity: 1;
-        }
-        
-        .portfolio-slide-content h3 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-        }
-        
-        .portfolio-slide-content p {
-            font-size: 18px;
-            color: var(--text-secondary);
-            font-weight: 500;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-        
-        /* Progress Indicator */
-        .portfolio-progress {
-            position: fixed;
-            right: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .progress-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-        
-        .progress-dot.active {
-            background: var(--primary);
-            transform: scale(1.5);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
-        }
-        
-        .progress-dot:hover {
-            background: var(--primary-light);
-            transform: scale(1.3);
-        }
-        
-        /* Certifications */
-        .cert-container {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .cert-link {
-            display: inline-block;
-            transition: transform 0.5s;
-        }
-        
-        .cert-link:hover {
-            transform: scale(1.03);
-        }
-        
-        .cert-image {
-            width: 100%;
-            border-radius: 16px;
-            margin-bottom: 36px;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .cert-title {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-        
-        .cert-course {
-            font-size: 18px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-        
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: start;
-        }
-        
-        .contact-info h3 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            font-weight: 800;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            margin-bottom: 32px;
-            padding: 28px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s;
-        }
-        
-        .contact-item:hover {
-            border-color: var(--primary);
-            transform: translateX(12px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .contact-icon {
-            font-size: 32px;
-            color: var(--primary);
-        }
-        
-        .contact-item a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        .contact-item a:hover {
-            color: var(--primary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 24px;
-            margin-top: 40px;
-        }
-        
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--bg-card);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s;
-        }
-        
-        .social-icon:hover {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            transform: translateY(-8px) rotate(10deg);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .hire-section {
-            background: linear-gradient(135deg, var(--bg-card), rgba(99, 102, 241, 0.05));
-            padding: 64px;
-            border-radius: 20px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .hire-section h3 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-        
-        .hire-section p {
-            color: var(--text-muted);
-            margin-bottom: 36px;
-            font-size: 18px;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--bg-darker);
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        footer p {
-            color: var(--text-muted);
-            font-size: 16px;
-        }
-        
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 3000;
-            backdrop-filter: blur(20px);
-            overflow-y: auto;
-            padding: 40px 20px;
-        }
-        
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.4s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            background: var(--bg-card);
-            padding: 56px;
-            border-radius: 24px;
-            max-width: 650px;
-            width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: var(--shadow-xl);
-        }
-        
-        @keyframes scaleIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 44px;
-            height: 44px;
+
+        .contact-form {
             background: rgba(255, 255, 255, 0.05);
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 32px;
-            color: var(--text-muted);
-            transition: all 0.3s;
+            padding: 50px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
         }
-        
-        .close-modal:hover {
-            background: var(--primary);
-            color: white;
-            transform: rotate(90deg);
-        }
-        
-        .modal h2 {
-            margin-bottom: 40px;
-            font-size: 36px;
-            font-weight: 800;
-            padding-right: 40px;
-        }
-        
+
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 25px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 10px;
-            color: var(--text-secondary);
             font-weight: 600;
             font-size: 14px;
         }
-        
+
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 16px;
-            background: rgba(10, 14, 39, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: var(--text-primary);
-            font-size: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
             font-family: inherit;
-            transition: all 0.3s;
+            font-size: 15px;
         }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-            background: rgba(10, 14, 39, 0.8);
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
-        
+
         .form-group textarea {
+            min-height: 120px;
             resize: vertical;
-            min-height: 140px;
         }
-        
+
         .form-message {
             padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 24px;
+            border-radius: 10px;
+            margin-bottom: 20px;
             display: none;
-            font-weight: 600;
         }
-        
+
         .form-message.success {
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(16, 185, 129, 0.2);
             border: 1px solid var(--accent);
             color: var(--accent);
         }
-        
+
         .form-message.error {
-            background: rgba(239, 68, 68, 0.1);
+            background: rgba(239, 68, 68, 0.2);
             border: 1px solid #ef4444;
             color: #ef4444;
         }
-        
-        /* WhatsApp Float */
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            padding: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 36px;
-            right: 36px;
-            width: 68px;
-            height: 68px;
-            background: linear-gradient(135deg, #25d366, #128c7e);
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            color: white;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
             text-decoration: none;
-            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.6);
-            z-index: 1500;
-            transition: all 0.4s;
-            animation: bounce 3s ease-in-out infinite;
+            font-size: 32px;
+            transition: all 0.3s;
         }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-        
+
         .whatsapp-float:hover {
-            transform: scale(1.15);
-            box-shadow: 0 12px 48px rgba(37, 211, 102, 0.8);
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
-        
-        /* Fade In Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
+
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 60px;
             }
-            
-            .hero-image {
-                order: -1;
-            }
-            
-            .stats-row {
+
+            .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .case-studies-grid {
+
+            .about-content,
+            .contact-content {
                 grid-template-columns: 1fr;
             }
-            
-            .portfolio-progress {
-                right: 20px;
-            }
         }
-        
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
-            .hero-text h1 {
+
+            .hero-main h1 {
                 font-size: 48px;
             }
-            
-            .stats-row {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            
-            .section-title h2 {
-                font-size: 40px;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .modal-content {
-                padding: 36px 24px;
+
+            .section-header h2 {
+                font-size: 36px;
             }
-            
-            .cta-buttons {
-                flex-direction: column;
+
+            .slide {
+                padding: 40px 20px;
             }
-            
-            .cta-buttons .btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .portfolio-slide-bg img {
-                max-width: 90%;
-                max-height: 70vh;
-            }
-            
-            .portfolio-slide-content h3 {
-                font-size: 24px;
-            }
-            
-            .portfolio-slide-content p {
-                font-size: 16px;
-            }
-            
-            .portfolio-progress {
+
+            .slider-arrow {
                 display: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader">
-        <div class="loader-spinner"></div>
-    </div>
-
-    <!-- Cursor Glow -->
-    <div class="cursor-glow"></div>
-
-    <!-- Background Shapes -->
-    <div class="bg-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
-
     <!-- Header -->
-    <header id="header">
-        <div class="container">
-            <nav>
-                <div class="logo">SH</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li>
-                        <div class="theme-toggle" id="themeToggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                            </svg>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <nav>
+            <div class="logo">Shahadat<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn-contact">Hire Me</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <p class="subtitle">Performance Marketer</p>
-                    <h1>I Turn Clicks Into Customers</h1>
-                    <p>Data-driven performance marketing that scales revenue — not just traffic.</p>
-                    <div class="cta-buttons">
-                        <button class="btn btn-primary open-modal">Hire Me</button>
-                        <a href="/cv.pdf" class="btn btn-download" download>Download CV</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-wrapper">
-                        <img src="https://i.ibb.co/2D3S7ZQ/shahadat-new.jpg" alt="Md Shahadat Husain">
-                    </div>
+        <div class="hero-content">
+            <div class="hero-main">
+                <span class="hero-label">Performance Marketer</span>
+                <h1>I Turn Clicks Into Customers</h1>
+                <p>Data-driven performance marketing that scales revenue — not just traffic. Expert in Meta Ads, Google Ads, and conversion optimization.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Let's Talk</button>
+                    <a href="/cv.pdf" class="btn-secondary" download>Download CV</a>
                 </div>
             </div>
-            <div class="stats-row">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="50">0</span>
-                    <span class="stat-label">£50k+ Ad Spend Managed</span>
+            <div class="hero-stats">
+                <div class="stat-card yellow">
+                    <div class="stat-number">£50k+</div>
+                    <div class="stat-label">Ad Spend Managed</div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="40">0</span>
-                    <span class="stat-label">40% Increase in Orders</span>
+                <div class="stat-card green">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Order Increase</div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="35">0</span>
-                    <span class="stat-label">35% Higher Conversion Rates</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="100">0</span>
-                    <span class="stat-label">Multi-Platform Paid Ads Expert</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>About Me</h2>
-                <p>Performance Marketer | Paid Ads | GA4 & Conversion API | CRO & Revenue Growth</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <p>I'm a performance marketer with a profit-first mindset. Every campaign I run is built on data, tested for efficiency, and optimised for scalable growth.</p>
-                    <p>I've managed £50k+ in social ad spend and £30k+ in PPC campaigns, delivering a 40% lift in orders and conversion rates that consistently beat benchmarks by 35%.</p>
-                    <p>My expertise spans Meta Ads, Google Ads, and TikTok Ads, backed by advanced tracking with GA4, GTM, and Conversion API. I don't just drive traffic — I turn clicks into customers and revenue.</p>
-                </div>
-                <div class="skills-grid fade-in">
-                    <div class="skill-item">Meta Ads Expert</div>
-                    <div class="skill-item">Google Ads Specialist</div>
-                    <div class="skill-item">TikTok Ads</div>
-                    <div class="skill-item">GA4 & GTM</div>
-                    <div class="skill-item">Conversion API</div>
-                    <div class="skill-item">CRO & Landing Pages</div>
-                    <div class="skill-item">Local SEO</div>
-                    <div class="skill-item">Analytics & Reporting</div>
+                <div class="stat-card blue">
+                    <div class="stat-number">35%</div>
+                    <div class="stat-label">Higher Conversions</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" style="background: rgba(10, 14, 39, 0.5);">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Services</h2>
-                <p>Comprehensive performance marketing solutions</p>
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>What I Do</h2>
+            <p>Comprehensive performance marketing solutions</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card yellow">
+                <div class="service-icon">📊</div>
+                <h3>Paid Advertising</h3>
+                <p>Meta Ads, Google Ads, and TikTok campaigns that maximize ROI</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <span class="service-icon">📊</span>
-                    <h3>Paid Advertising</h3>
-                    <p>Expert campaign management across Meta, Google, and TikTok Ads. Scaled strategies that maximize ROI and drive conversions.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <span class="service-icon">🎯</span>
-                    <h3>Conversion Tracking</h3>
-                    <p>Advanced implementation of GA4, GTM, and Conversion API for complete visibility and precise attribution.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <span class="service-icon">⚡</span>
-                    <h3>CRO & Landing Pages</h3>
-                    <p>Data-driven optimization of landing pages and user journeys to increase conversion rates and revenue.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <span class="service-icon">📍</span>
-                    <h3>Local SEO</h3>
-                    <p>Strategic Google Business Profile optimization and local search domination for maximum local visibility.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <span class="service-icon">📈</span>
-                    <h3>Analytics & Reporting</h3>
-                    <p>Custom dashboards and comprehensive reporting to track KPIs and drive informed business decisions.</p>
-                </div>
+            <div class="service-card green">
+                <div class="service-icon">🎯</div>
+                <h3>Conversion Tracking</h3>
+                <p>GA4, GTM, and Conversion API implementation</p>
+            </div>
+            <div class="service-card blue">
+                <div class="service-icon">⚡</div>
+                <h3>CRO & Landing Pages</h3>
+                <p>Optimize user journeys for maximum conversions</p>
+            </div>
+            <div class="service-card purple">
+                <div class="service-icon">📈</div>
+                <h3>Analytics & Reporting</h3>
+                <p>Custom dashboards and KPI tracking</p>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies -->
-    <section id="case-studies">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Case Studies</h2>
-                <p>Real campaigns, real results</p>
-            </div>
-            <div class="case-studies-grid">
-                <div class="case-study fade-in">
-                    <div class="case-study-images">
-                        <img src="https://i.ibb.co/R4TY72Hz/FB-IMG-1755934860649.jpg" alt="Baby Toy Campaign 1">
-                        <img src="https://i.ibb.co/5h58YVHJ/FB-IMG-1755934857527.jpg" alt="Baby Toy Campaign 2">
-                        <img src="https://i.ibb.co/Hp9zx6F8/FB-IMG-1755934855007.jpg" alt="Baby Toy Campaign 3">
-                    </div>
-                    <div class="case-study-content">
-                        <h3>Baby Toy Brand – Bangladesh</h3>
-                        <ul>
-                            <li>Developed custom audiences and lookalike targeting strategies</li>
-                            <li>Created emotion-driven creatives focusing on parents, safety, and child learning</li>
-                            <li>Achieved significant growth in sales, engagement, and brand trust</li>
-                            <li>Optimised campaigns for maximum ROAS across Meta platforms</li>
-                        </ul>
+    <!-- Portfolio Slider -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="section-header">
+            <h2>My Work</h2>
+            <p>Real campaigns, real results</p>
+        </div>
+        <div class="portfolio-slider">
+            <button class="slider-arrow prev" onclick="previousSlide()">‹</button>
+            <button class="slider-arrow next" onclick="nextSlide()">›</button>
+            
+            <div class="slider-wrapper" id="sliderWrapper">
+                <div class="slide">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="Campaign 1">
+                    <div class="slide-info">
+                        <h3>Campaign Performance</h3>
+                        <p>Meta Ads • Revenue Growth</p>
                     </div>
                 </div>
-                <div class="case-study fade-in">
-                    <div class="case-study-image">💰</div>
-                    <div class="case-study-content">
-                        <h3>Lead Generation Funnel Optimisation</h3>
-                        <ul>
-                            <li>Cold traffic CPL: $8.42</li>
-                            <li>Retargeting CPL: $4.31</li>
-                            <li>Achieved 50% CPL reduction through creative optimization and strategic retargeting</li>
-                            <li>Implemented advanced audience segmentation and funnel optimization</li>
-                        </ul>
+                <div class="slide">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="Campaign 2">
+                    <div class="slide-info">
+                        <h3>Lead Generation</h3>
+                        <p>Google Ads • 50% CPL Reduction</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="Campaign 3">
+                    <div class="slide-info">
+                        <h3>E-commerce Growth</h3>
+                        <p>Conversion Rate • 40% Increase</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="Campaign 4">
+                    <div class="slide-info">
+                        <h3>ROAS Optimization</h3>
+                        <p>Meta Ads • 3.5x Return</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="Campaign 5">
+                    <div class="slide-info">
+                        <h3>Brand Awareness</h3>
+                        <p>TikTok Ads • 2M+ Reach</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="Campaign 6">
+                    <div class="slide-info">
+                        <h3>Conversion Tracking</h3>
+                        <p>GA4 Setup • 100% Accuracy</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="Campaign 7">
+                    <div class="slide-info">
+                        <h3>Audience Targeting</h3>
+                        <p>Lookalike Campaigns • 35% Higher CTR</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="Campaign 8">
+                    <div class="slide-info">
+                        <h3>Retargeting Success</h3>
+                        <p>Meta Pixel • 60% Conversion Lift</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-nav" id="sliderNav"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://i.ibb.co/2D3S7ZQ/shahadat-new.jpg" alt="Md Shahadat Husain">
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I'm a performance marketer with a profit-first mindset. Every campaign I run is built on data, tested for efficiency, and optimised for scalable growth.</p>
+                <p>I've managed £50k+ in social ad spend and £30k+ in PPC campaigns, delivering a 40% lift in orders and conversion rates that consistently beat benchmarks by 35%.</p>
+                <p>My expertise spans Meta Ads, Google Ads, and TikTok Ads, backed by advanced tracking with GA4, GTM, and Conversion API.</p>
+                
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <span>Meta Ads Management</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Google Ads & PPC</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>GA4 & GTM Setup</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span>Conversion API</span>
+                        <span class="skill-level">Advanced</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Fullscreen Section -->
-    <section id="portfolio">
-        <div class="portfolio-fullscreen">
-            <div class="portfolio-slide active">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>Campaign Performance</h3>
-                    <p>Meta Ads • Revenue Growth</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>Lead Generation</h3>
-                    <p>Google Ads • 50% CPL Reduction</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>E-commerce Growth</h3>
-                    <p>Conversion Optimization • 40% Increase</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>ROAS Optimization</h3>
-                    <p>Meta Ads • 3.5x Return</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>Brand Awareness</h3>
-                    <p>TikTok Ads • 2M+ Reach</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>Conversion Tracking</h3>
-                    <p>GA4 Implementation • 100% Accuracy</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>Audience Targeting</h3>
-                    <p>Lookalike Campaigns • 35% Higher CTR</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>Retargeting Success</h3>
-                    <p>Meta Pixel • 60% Conversion Lift</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>Ad Creative Testing</h3>
-                    <p>A/B Testing • 2x Performance</p>
-                </div>
-            </div>
-            <div class="portfolio-slide">
-                <div class="portfolio-slide-bg">
-                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="Campaign Result" loading="lazy">
-                </div>
-                <div class="portfolio-slide-content">
-                    <h3>Local SEO Growth</h3>
-                    <p>Google Business • #1 Rankings</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Progress Indicator -->
-        <div class="portfolio-progress">
-            <div class="progress-dot active" data-slide="0"></div>
-            <div class="progress-dot" data-slide="1"></div>
-            <div class="progress-dot" data-slide="2"></div>
-            <div class="progress-dot" data-slide="3"></div>
-            <div class="progress-dot" data-slide="4"></div>
-            <div class="progress-dot" data-slide="5"></div>
-            <div class="progress-dot" data-slide="6"></div>
-            <div class="progress-dot" data-slide="7"></div>
-            <div class="progress-dot" data-slide="8"></div>
-            <div class="progress-dot" data-slide="9"></div>
-        </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" style="background: rgba(10, 14, 39, 0.5);">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Certifications</h2>
-                <p>Validated expertise and continuous learning</p>
-            </div>
-            <div class="cert-container fade-in">
-                <a href="https://www.coursera.org/account/accomplishments/verify/MW3YHYE0CD0A" target="_blank" class="cert-link">
-                    <img src="https://i.ibb.co/vvkcCGp0/CERTIFICATE-LANDING-PAGE-MW3-YHYE0-CD0-A.jpg" alt="Certification" class="cert-image">
-                </a>
-                <h3 class="cert-title">Certificate</h3>
-                <p class="cert-course">Foundations of Digital Marketing and E-commerce</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title fade-in">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <div class="contact-info">
                 <h2>Let's Work Together</h2>
-                <p>Ready to scale your business with performance marketing?</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info fade-in">
-                    <h3>Get In Touch</h3>
+                <p>Ready to scale your business with performance marketing? Let's discuss how I can help drive real revenue for your business.</p>
+                
+                <div class="contact-details">
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div>
-                            <a href="mailto:husainrashed217@gmail.com">husainrashed217@gmail.com</a>
+                            <strong>Email</strong><br>
+                            <a href="mailto:husainrashed217@gmail.com" style="color: white; text-decoration: none;">husainrashed217@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">📍</div>
                         <div>
-                            <p>Sylhet, Bangladesh</p>
+                            <strong>Location</strong><br>
+                            Sylhet, Bangladesh
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/shahadat.mr.Google" target="_blank" class="social-icon">f</a>
-                        <a href="https://www.instagram.com/shahadat_husain_rashed/" target="_blank" class="social-icon">📷</a>
-                        <a href="https://www.linkedin.com/in/md-shahadat-husain/" target="_blank" class="social-icon">in</a>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            <a href="https://www.linkedin.com/in/md-shahadat-husain/" target="_blank" style="color: white; text-decoration: none;">View Profile</a>
+                        </div>
                     </div>
                 </div>
-                <div class="hire-section fade-in">
-                    <h3>Ready to Grow Your Business?</h3>
-                    <p>Let's discuss how performance marketing can drive real revenue for your business.</p>
-                    <button class="btn btn-primary open-modal">Hire Me</button>
-                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-message" id="formMessage"></div>
+                    
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="fullName" required placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" name="phone" required placeholder="+880 1234567890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Business Name *</label>
+                        <input type="text" name="businessName" required placeholder="Your business">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Monthly Ad Budget *</label>
+                        <select name="adBudget" required>
+                            <option value="">Select budget range</option>
+                            <option value="Under $1,000">Under $1,000</option>
+                            <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                            <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                            <option value="$25,000+">$25,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Md Shahadat Husain. All rights reserved.</p>
-        </div>
+        <p>&copy; 2026 Md Shahadat Husain. All rights reserved.</p>
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/8801959238319?text=Hi%20Shahadat%2C%20I%20checked%20your%20portfolio%20and%20want%20to%20discuss%20my%20business%20growth." target="_blank" class="whatsapp-float">💬</a>
-
-    <!-- Modal -->
-    <div class="modal" id="contactModal">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h2>Let's Discuss Your Project</h2>
-            <div class="form-message" id="formMessage"></div>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="fullName">Full Name *</label>
-                    <input type="text" id="fullName" name="fullName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone *</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="businessName">Business Name *</label>
-                    <input type="text" id="businessName" name="businessName" required>
-                </div>
-                <div class="form-group">
-                    <label for="businessCategory">Business Category *</label>
-                    <input type="text" id="businessCategory" name="businessCategory" required>
-                </div>
-                <div class="form-group">
-                    <label for="adBudget">Monthly Ad Budget *</label>
-                    <select id="adBudget" name="adBudget" required>
-                        <option value="">Select budget range</option>
-                        <option value="Under $1,000">Under $1,000</option>
-                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
-                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                        <option value="$25,000+">$25,000+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="mainGoal">Main Goal *</label>
-                    <select id="mainGoal" name="mainGoal" required>
-                        <option value="">Select your goal</option>
-                        <option value="Leads">Generate Leads</option>
-                        <option value="Sales">Increase Sales</option>
-                        <option value="Local Growth">Local Growth</option>
-                        <option value="Scaling">Scaling Existing Campaigns</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-            </form>
-        </div>
-    </div>
+    <a href="https://wa.me/8801959238319?text=Hi%20Shahadat%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" class="whatsapp-float">💬</a>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
         // EmailJS Init
-        (function() {
-            emailjs.init('0T7tiDjGh4drTDrew');
-        })();
+        emailjs.init('0T7tiDjGh4drTDrew');
 
-        // Page Loader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.page-loader').classList.add('hidden');
-            }, 800);
+        // Slider
+        let currentSlide = 0;
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        const slides = sliderWrapper.querySelectorAll('.slide');
+        const sliderNav = document.getElementById('sliderNav');
+        
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'slider-dot';
+            if (index === 0) dot.classList.add('active');
+            dot.onclick = () => goToSlide(index);
+            sliderNav.appendChild(dot);
         });
 
-        // Cursor Glow
-        const cursorGlow = document.querySelector('.cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            cursorGlow.style.left = e.clientX + 'px';
-            cursorGlow.style.top = e.clientY + 'px';
-        });
-
-        // Header Scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Modal
-        const modal = document.getElementById('contactModal');
-        const openModalBtns = document.querySelectorAll('.open-modal');
-        const closeModalBtn = document.querySelector('.close-modal');
-        const contactForm = document.getElementById('contactForm');
-        const formMessage = document.getElementById('formMessage');
-
-        openModalBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+        function updateSlider() {
+            sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            document.querySelectorAll('.slider-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
             });
-        });
+        }
 
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }
 
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Auto-slide
+        setInterval(nextSlide, 5000);
 
         // Form Submit
-        contactForm.addEventListener('submit', (e) => {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
             const templateParams = {
-                fullName: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                businessName: document.getElementById('businessName').value,
-                businessCategory: document.getElementById('businessCategory').value,
-                adBudget: document.getElementById('adBudget').value,
-                mainGoal: document.getElementById('mainGoal').value,
-                message: document.getElementById('message').value
+                fullName: this.fullName.value,
+                email: this.email.value,
+                phone: this.phone.value,
+                businessName: this.businessName.value,
+                adBudget: this.adBudget.value,
+                message: this.message.value
             };
 
             emailjs.send('service_uonopr6', 'template_7zrq0tm', templateParams)
@@ -1650,16 +1017,10 @@
                     formMessage.textContent = 'Message sent successfully! I\'ll get back to you soon.';
                     formMessage.className = 'form-message success';
                     formMessage.style.display = 'block';
-                    contactForm.reset();
-                    
-                    setTimeout(() => {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                        formMessage.style.display = 'none';
-                    }, 3000);
+                    this.reset();
                 })
                 .catch(() => {
-                    formMessage.textContent = 'Failed to send message. Please try again.';
+                    formMessage.textContent = 'Failed to send. Please try again.';
                     formMessage.className = 'form-message error';
                     formMessage.style.display = 'block';
                 })
@@ -1669,7 +1030,7 @@
                 });
         });
 
-        // Smooth Scroll
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1678,138 +1039,6 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-
-        // Intersection Observer for Fade In
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Portfolio Fullscreen Scroll
-        const slides = document.querySelectorAll('.portfolio-slide');
-        const progressDots = document.querySelectorAll('.progress-dot');
-        let currentSlide = 0;
-        let isScrolling = false;
-
-        function updateSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active', 'scrolling');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-            
-            progressDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            
-            currentSlide = index;
-        }
-
-        // Scroll Event
-        const portfolioSection = document.getElementById('portfolio');
-        let lastScrollTime = 0;
-        const scrollCooldown = 800;
-
-        window.addEventListener('wheel', (e) => {
-            const portfolioRect = portfolioSection.getBoundingClientRect();
-            const isInPortfolio = portfolioRect.top <= 100 && portfolioRect.bottom >= window.innerHeight;
-            
-            if (!isInPortfolio || isScrolling) return;
-            
-            const now = Date.now();
-            if (now - lastScrollTime < scrollCooldown) return;
-            
-            const delta = Math.sign(e.deltaY);
-            
-            if (delta > 0 && currentSlide < slides.length - 1) {
-                e.preventDefault();
-                isScrolling = true;
-                lastScrollTime = now;
-                slides[currentSlide].classList.add('scrolling');
-                
-                setTimeout(() => {
-                    updateSlide(currentSlide + 1);
-                    isScrolling = false;
-                }, 300);
-            } else if (delta < 0 && currentSlide > 0) {
-                e.preventDefault();
-                isScrolling = true;
-                lastScrollTime = now;
-                
-                setTimeout(() => {
-                    updateSlide(currentSlide - 1);
-                    isScrolling = false;
-                }, 300);
-            }
-        }, { passive: false });
-
-        // Progress Dot Click
-        progressDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                if (!isScrolling) {
-                    updateSlide(index);
-                }
-            });
-        });
-
-        // ESC key closes modal
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Stats Counter
-        const statNumbers = document.querySelectorAll('.stat-number');
-        let statsAnimated = false;
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    statsAnimated = true;
-                    statNumbers.forEach(stat => {
-                        const target = parseInt(stat.getAttribute('data-target'));
-                        const duration = 2000;
-                        const increment = target / (duration / 16);
-                        let current = 0;
-
-                        const updateCounter = () => {
-                            current += increment;
-                            if (current < target) {
-                                stat.textContent = Math.floor(current);
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                stat.textContent = target + (target < 100 ? '%' : '%');
-                            }
-                        };
-                        updateCounter();
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsRow = document.querySelector('.stats-row');
-        if (statsRow) {
-            statsObserver.observe(statsRow);
-        }
-
-        // Theme Toggle (Placeholder)
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            console.log('Theme toggle clicked');
         });
     </script>
 </body>
