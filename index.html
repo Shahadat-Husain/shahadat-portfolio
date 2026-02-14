@@ -640,199 +640,108 @@
             font-size: 20px;
         }
         
-        /* Portfolio Section */
+        /* Portfolio Fullscreen Section */
         #portfolio {
-            background: linear-gradient(180deg, var(--bg-darker) 0%, rgba(10, 14, 39, 0.5) 100%);
+            padding: 0;
+            background: var(--bg-darker);
+        }
+        
+        .portfolio-fullscreen {
             position: relative;
         }
         
-        #portfolio::before {
-            content: '';
+        .portfolio-slide {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-darker);
+        }
+        
+        .portfolio-slide-bg {
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
-            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        .portfolio-header {
-            text-align: center;
-            margin-bottom: 100px;
-        }
-        
-        .portfolio-header h2 {
-            font-size: 64px;
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
-            background: linear-gradient(135deg, var(--text-primary), var(--primary-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .portfolio-header p {
-            font-size: 22px;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-        
-        /* Masonry Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 32px;
-            grid-auto-flow: dense;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .portfolio-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary);
-        }
-        
-        .portfolio-image-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 100%;
-            overflow: hidden;
-            background: rgba(10, 14, 39, 0.5);
-        }
-        
-        .portfolio-item img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 20px;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .portfolio-item:hover img {
+        .portfolio-slide.scrolling .portfolio-slide-bg {
             transform: scale(1.1);
         }
         
-        .portfolio-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.95), rgba(168, 85, 247, 0.95));
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            backdrop-filter: blur(10px);
+        .portfolio-slide-bg img {
+            max-width: 70%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        .portfolio-item:hover .portfolio-overlay {
+        .portfolio-slide-content {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .portfolio-slide.active .portfolio-slide-content {
             opacity: 1;
         }
         
-        .portfolio-overlay-content {
-            text-align: center;
-            transform: translateY(20px);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .portfolio-item:hover .portfolio-overlay-content {
-            transform: translateY(0);
-        }
-        
-        .portfolio-overlay h4 {
-            font-size: 28px;
+        .portfolio-slide-content h3 {
+            font-size: 32px;
             font-weight: 800;
             margin-bottom: 12px;
-            color: white;
+            color: var(--text-primary);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
         
-        .portfolio-overlay p {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.9);
+        .portfolio-slide-content p {
+            font-size: 18px;
+            color: var(--text-secondary);
             font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
         
-        /* Lightbox */
-        .lightbox {
-            display: none;
+        /* Progress Indicator */
+        .portfolio-progress {
             position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 5000;
-            backdrop-filter: blur(20px);
-            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .lightbox.active {
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        @keyframes scaleIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            border-radius: 16px;
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            width: 48px;
-            height: 48px;
-            background: white;
-            border: none;
+        .progress-dot {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            font-size: 24px;
-            color: var(--bg-darker);
-            transition: all 0.3s;
         }
         
-        .lightbox-close:hover {
-            transform: scale(1.1) rotate(90deg);
+        .progress-dot.active {
             background: var(--primary);
-            color: white;
+            transform: scale(1.5);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+        }
+        
+        .progress-dot:hover {
+            background: var(--primary-light);
+            transform: scale(1.3);
         }
         
         /* Certifications */
@@ -1001,6 +910,11 @@
             animation: fadeIn 0.4s;
         }
         
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
         .modal-content {
             background: var(--bg-card);
             padding: 56px;
@@ -1012,6 +926,11 @@
             max-height: 90vh;
             overflow-y: auto;
             box-shadow: var(--shadow-xl);
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
         
         .close-modal {
@@ -1167,8 +1086,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            .portfolio-progress {
+                right: 20px;
             }
         }
         
@@ -1204,11 +1123,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            
             .modal-content {
                 padding: 36px 24px;
             }
@@ -1220,6 +1134,23 @@
             .cta-buttons .btn {
                 width: 100%;
                 text-align: center;
+            }
+            
+            .portfolio-slide-bg img {
+                max-width: 90%;
+                max-height: 70vh;
+            }
+            
+            .portfolio-slide-content h3 {
+                font-size: 24px;
+            }
+            
+            .portfolio-slide-content p {
+                font-size: 16px;
+            }
+            
+            .portfolio-progress {
+                display: none;
             }
         }
     </style>
@@ -1407,300 +1338,115 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Fullscreen Section -->
     <section id="portfolio">
-        <div class="container">
-            <div class="portfolio-header fade-in">
-                <h2>Selected Work</h2>
-                <p>Results & Case Studies</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
+        <div class="portfolio-fullscreen">
+            <div class="portfolio-slide active">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="Campaign Result" loading="lazy">
                 </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_9_qi1gyg.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_9_qi1gyg.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_7_rc7ccy.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_7_rc7ccy.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_24_evc0sd.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_24_evc0sd.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_8_jngsg8.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_8_jngsg8.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_25_y8bh1g.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_25_y8bh1g.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_6_mm3vff.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_6_mm3vff.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_5_nzztmi.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_5_nzztmi.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_4_tfvqdv.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_4_tfvqdv.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_23_fpdmtt.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_23_fpdmtt.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_22_nw30ms.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_22_nw30ms.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_20_zrstpz.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_20_zrstpz.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_3_a4wsgm.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_3_a4wsgm.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_21_hhhhja.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_21_hhhhja.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_2_cj796l.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_2_cj796l.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-img="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_1_w1edvj.jpg">
-                    <div class="portfolio-image-wrapper">
-                        <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_1_w1edvj.jpg" alt="My Work" loading="lazy">
-                    </div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-overlay-content">
-                            <h4>My Work</h4>
-                            <p>View Project</p>
-                        </div>
-                    </div>
+                <div class="portfolio-slide-content">
+                    <h3>Campaign Performance</h3>
+                    <p>Meta Ads • Revenue Growth</p>
                 </div>
             </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>Lead Generation</h3>
+                    <p>Google Ads • 50% CPL Reduction</p>
+                </div>
+            </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>E-commerce Growth</h3>
+                    <p>Conversion Optimization • 40% Increase</p>
+                </div>
+            </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>ROAS Optimization</h3>
+                    <p>Meta Ads • 3.5x Return</p>
+                </div>
+            </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>Brand Awareness</h3>
+                    <p>TikTok Ads • 2M+ Reach</p>
+                </div>
+            </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>Conversion Tracking</h3>
+                    <p>GA4 Implementation • 100% Accuracy</p>
+                </div>
+            </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>Audience Targeting</h3>
+                    <p>Lookalike Campaigns • 35% Higher CTR</p>
+                </div>
+            </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>Retargeting Success</h3>
+                    <p>Meta Pixel • 60% Conversion Lift</p>
+                </div>
+            </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>Ad Creative Testing</h3>
+                    <p>A/B Testing • 2x Performance</p>
+                </div>
+            </div>
+            <div class="portfolio-slide">
+                <div class="portfolio-slide-bg">
+                    <img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="Campaign Result" loading="lazy">
+                </div>
+                <div class="portfolio-slide-content">
+                    <h3>Local SEO Growth</h3>
+                    <p>Google Business • #1 Rankings</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="portfolio-progress">
+            <div class="progress-dot active" data-slide="0"></div>
+            <div class="progress-dot" data-slide="1"></div>
+            <div class="progress-dot" data-slide="2"></div>
+            <div class="progress-dot" data-slide="3"></div>
+            <div class="progress-dot" data-slide="4"></div>
+            <div class="progress-dot" data-slide="5"></div>
+            <div class="progress-dot" data-slide="6"></div>
+            <div class="progress-dot" data-slide="7"></div>
+            <div class="progress-dot" data-slide="8"></div>
+            <div class="progress-dot" data-slide="9"></div>
         </div>
     </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightboxClose">&times;</button>
-            <img src="" alt="Portfolio Image" id="lightboxImg">
-        </div>
-    </div>
 
     <!-- Certifications -->
     <section id="certifications" style="background: rgba(10, 14, 39, 0.5);">
@@ -1950,63 +1696,79 @@
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Portfolio Items Staggered Animation
-        const portfolioObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const index = entry.target.dataset.index;
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
+        // Portfolio Fullscreen Scroll
+        const slides = document.querySelectorAll('.portfolio-slide');
+        const progressDots = document.querySelectorAll('.progress-dot');
+        let currentSlide = 0;
+        let isScrolling = false;
+
+        function updateSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'scrolling');
+                if (i === index) {
+                    slide.classList.add('active');
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
-            item.dataset.index = index;
-            portfolioObserver.observe(item);
-        });
-
-        // Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const lightboxClose = document.getElementById('lightboxClose');
-
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const imgSrc = item.dataset.img;
-                lightboxImg.src = imgSrc;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            
+            progressDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
             });
-        });
+            
+            currentSlide = index;
+        }
 
-        lightboxClose.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
+        // Scroll Event
+        const portfolioSection = document.getElementById('portfolio');
+        let lastScrollTime = 0;
+        const scrollCooldown = 800;
 
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = 'auto';
+        window.addEventListener('wheel', (e) => {
+            const portfolioRect = portfolioSection.getBoundingClientRect();
+            const isInPortfolio = portfolioRect.top <= 100 && portfolioRect.bottom >= window.innerHeight;
+            
+            if (!isInPortfolio || isScrolling) return;
+            
+            const now = Date.now();
+            if (now - lastScrollTime < scrollCooldown) return;
+            
+            const delta = Math.sign(e.deltaY);
+            
+            if (delta > 0 && currentSlide < slides.length - 1) {
+                e.preventDefault();
+                isScrolling = true;
+                lastScrollTime = now;
+                slides[currentSlide].classList.add('scrolling');
+                
+                setTimeout(() => {
+                    updateSlide(currentSlide + 1);
+                    isScrolling = false;
+                }, 300);
+            } else if (delta < 0 && currentSlide > 0) {
+                e.preventDefault();
+                isScrolling = true;
+                lastScrollTime = now;
+                
+                setTimeout(() => {
+                    updateSlide(currentSlide - 1);
+                    isScrolling = false;
+                }, 300);
             }
+        }, { passive: false });
+
+        // Progress Dot Click
+        progressDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                if (!isScrolling) {
+                    updateSlide(index);
+                }
+            });
         });
 
-        // ESC key closes lightbox
+        // ESC key closes modal
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (lightbox.classList.contains('active')) {
-                    lightbox.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-                if (modal.classList.contains('active')) {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
         });
 
@@ -2047,7 +1809,6 @@
         // Theme Toggle (Placeholder)
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
-            // Theme toggle functionality can be added here
             console.log('Theme toggle clicked');
         });
     </script>
