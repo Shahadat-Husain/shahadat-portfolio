@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Shahadat Husain | Performance Marketing Expert</title>
+    <title>Md Shahadat Husain | Performance Marketing That Actually Delivers ROI</title>
+    <meta name="description" content="Stop wasting money on ads that don't convert. I help businesses scale to £100k+/month with Meta Ads, Google Ads & proven conversion systems.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,49 +17,60 @@
 
         :root {
             --primary: #6366f1;
-            --secondary: #f59e0b;
             --accent: #10b981;
-            --dark: #1e293b;
-            --darker: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
+            --dark: #0f172a;
+            --red: #ef4444;
+            --orange: #f59e0b;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark);
-            background: var(--light);
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        /* Sticky Bar */
+        .sticky-bar {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 600;
+            font-size: 14px;
         }
 
+        .sticky-bar span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        /* Navigation */
         nav {
-            max-width: 1400px;
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 20px 40px;
+            padding: 0 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 80px;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 800;
+            font-size: 22px;
+            font-weight: 900;
             color: var(--dark);
-        }
-
-        .logo span {
-            color: var(--primary);
         }
 
         .nav-links {
@@ -68,269 +80,457 @@
         }
 
         .nav-links a {
-            color: var(--dark);
+            color: #475569;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 15px;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        .btn-contact {
-            background: var(--dark);
+        .nav-cta {
+            background: #0f172a;
             color: white;
-            padding: 12px 30px;
+            padding: 14px 28px;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
             transition: all 0.3s;
         }
 
-        .btn-contact:hover {
+        .nav-cta:hover {
             background: var(--primary);
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            margin-top: 80px;
-            padding: 80px 40px;
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-main {
-            background: var(--dark);
-            padding: 80px 60px;
-            border-radius: 30px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
+            padding: 100px 32px 120px;
             position: relative;
             overflow: hidden;
         }
 
-        .hero-main::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(99,102,241,0.3)"/></svg>') repeat;
+            opacity: 0.3;
         }
 
-        .hero-label {
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 20px;
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .hero-main h1 {
-            font-size: 72px;
-            font-weight: 800;
-            line-height: 1.1;
+            font-weight: 700;
             margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .hero-main p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: white;
-            color: var(--dark);
-            padding: 16px 40px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-            transition: all 0.3s;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: white;
-        }
-
-        .hero-stats {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .stat-card.yellow {
-            background: #fef08a;
-        }
-
-        .stat-card.green {
-            background: #bbf7d0;
-        }
-
-        .stat-card.blue {
-            background: #bfdbfe;
-        }
-
-        .stat-number {
-            font-size: 48px;
+        .hero h1 {
+            font-size: 72px;
             font-weight: 900;
-            color: var(--dark);
-            line-height: 1;
-            margin-bottom: 8px;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            max-width: 900px;
+            letter-spacing: -2px;
         }
 
-        .stat-label {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--dark);
-            opacity: 0.7;
+        .hero h1 .highlight {
+            color: #10b981;
         }
 
-        /* Services Section */
-        .services {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
+        .hero-subheading {
+            font-size: 24px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 48px;
+            max-width: 800px;
+            font-weight: 500;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .service-card.yellow {
-            background: #fef9c3;
-        }
-
-        .service-card.green {
-            background: #d1fae5;
-        }
-
-        .service-card.blue {
-            background: #dbeafe;
-        }
-
-        .service-card.purple {
-            background: #e9d5ff;
-        }
-
-        .service-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: var(--dark);
-        }
-
-        .service-card p {
-            font-size: 14px;
-            color: var(--gray);
-            line-height: 1.6;
-        }
-
-        /* Portfolio Slider Section */
-        .portfolio-section {
-            padding: 100px 40px;
-            background: var(--light);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
             margin-bottom: 60px;
         }
 
-        .section-header h2 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            color: var(--dark);
+        .btn {
+            padding: 18px 36px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .section-header p {
+        .btn-primary {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(16, 185, 129, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0f172a;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-3px);
+        }
+
+        .hero-proof {
+            display: flex;
+            gap: 60px;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #10b981;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .proof-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 100px 32px;
+            background: white;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #64748b;
+            margin-bottom: 60px;
+            line-height: 1.6;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .problem-card {
+            background: #f8fafc;
+            padding: 40px;
+            border-radius: 16px;
+            border-left: 4px solid var(--red);
+        }
+
+        .problem-card h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .problem-card p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 100px 32px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 48px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .solution-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
+
+        .solution-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .solution-card p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .solution-card ul {
+            list-style: none;
+        }
+
+        .solution-card li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 15px;
+            color: #475569;
+        }
+
+        .solution-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Results Section */
+        .results-section {
+            padding: 100px 32px;
+            background: var(--dark);
+            color: white;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 48px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .result-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .result-card h3 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .result-meta {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+
+        .result-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 900;
+            color: #10b981;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .result-list {
+            list-style: none;
+        }
+
+        .result-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .result-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
             font-size: 18px;
-            color: var(--gray);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 100px 32px;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: white;
+            margin: 0 auto 24px;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 100px 32px;
+            background: #f8fafc;
         }
 
         .portfolio-slider {
+            background: var(--dark);
+            border-radius: 24px;
+            padding: 80px;
+            margin-top: 60px;
             position: relative;
-            overflow: hidden;
-            border-radius: 30px;
-            background: var(--darker);
         }
 
         .slider-wrapper {
             display: flex;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.6s ease;
         }
 
         .slide {
@@ -338,31 +538,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px;
-            position: relative;
         }
 
         .slide img {
-            max-width: 80%;
+            max-width: 90%;
             max-height: 600px;
             object-fit: contain;
-            border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .slider-nav {
             position: absolute;
-            bottom: 30px;
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 10px;
-            z-index: 10;
+            gap: 8px;
         }
 
         .slider-dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
@@ -370,8 +567,8 @@
         }
 
         .slider-dot.active {
-            width: 30px;
-            border-radius: 5px;
+            width: 32px;
+            border-radius: 4px;
             background: white;
         }
 
@@ -380,350 +577,223 @@
             top: 50%;
             transform: translateY(-50%);
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
             border: none;
             color: white;
             width: 50px;
             height: 50px;
             border-radius: 50%;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             font-size: 24px;
             transition: all 0.3s;
-            z-index: 10;
         }
 
         .slider-arrow:hover {
             background: rgba(255, 255, 255, 0.2);
         }
 
-        .slider-arrow.prev {
-            left: 30px;
-        }
+        .slider-arrow.prev { left: 40px; }
+        .slider-arrow.next { right: 40px; }
 
-        .slider-arrow.next {
-            right: 30px;
-        }
-
-        /* Case Studies Section */
-        .case-studies {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .case-studies-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .case-study {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s;
-        }
-
-        .case-study:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .case-study-images {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-        }
-
-        .case-study-images img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .case-study-content {
-            padding: 40px;
-        }
-
-        .case-study-content h3 {
-            font-size: 26px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .case-study-content ul {
-            list-style: none;
-        }
-
-        .case-study-content li {
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            color: var(--gray);
-            line-height: 1.6;
-        }
-
-        .case-study-content li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .case-study-placeholder {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(16, 185, 129, 0.2));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 64px;
-        }
-
-        /* About Section */
-        .about {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .about-text h2 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            color: var(--dark);
-        }
-
-        .about-text p {
-            font-size: 18px;
-            color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .skills-list {
-            margin-top: 40px;
-        }
-
-        .skill-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: var(--light);
-            border-radius: 12px;
-            margin-bottom: 15px;
-        }
-
-        .skill-item span {
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .skill-level {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        /* Certifications */
-        .certifications {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .cert-container {
-            max-width: 900px;
-            margin: 60px auto 0;
+        /* Guarantee Section */
+        .guarantee-section {
+            padding: 100px 32px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
             text-align: center;
         }
 
-        .cert-link {
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .cert-link:hover {
-            transform: scale(1.02);
-        }
-
-        .cert-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .cert-title {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .cert-course {
-            font-size: 16px;
-            color: var(--gray);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 100px 40px;
-            background: var(--dark);
-            color: white;
-        }
-
-        .contact-content {
-            max-width: 1400px;
+        .guarantee-box {
+            max-width: 800px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-        }
-
-        .contact-info h2 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 24px;
-        }
-
-        .contact-info p {
-            font-size: 18px;
-            opacity: 0.8;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-
-        .contact-item:hover {
             background: rgba(255, 255, 255, 0.1);
-            transform: translateX(10px);
+            padding: 60px;
+            border-radius: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
+        .guarantee-badge {
+            width: 100px;
+            height: 100px;
+            background: white;
+            color: #10b981;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            font-size: 24px;
-            transition: all 0.3s;
+            font-size: 48px;
+            margin: 0 auto 24px;
+            font-weight: 900;
         }
 
-        .social-icon:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
+        .guarantee-box h2 {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 24px;
         }
 
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 50px;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .guarantee-box p {
+            font-size: 20px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
         }
 
-        .contact-form h3 {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 30px;
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 32px;
+            background: var(--dark);
+            text-align: center;
+            color: white;
         }
 
-        .form-row {
+        .cta-section h2 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .cta-section p {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #020617;
+            padding: 80px 32px 40px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            line-height: 2.5;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 24px;
+            padding: 56px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: #f1f5f9;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: #e2e8f0;
+        }
+
+        .modal h2 {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 32px;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
             font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
             border-radius: 10px;
-            color: white;
-            font-family: inherit;
             font-size: 15px;
-            transition: all 0.3s;
+            font-family: inherit;
+            transition: all 0.2s;
         }
 
         .form-group input:focus,
@@ -731,61 +801,36 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-group select option {
-            background: var(--dark);
-            color: white;
         }
 
         .form-group textarea {
-            min-height: 120px;
             resize: vertical;
+            min-height: 120px;
         }
 
         .form-message {
-            padding: 20px;
+            padding: 16px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             display: none;
             font-weight: 600;
         }
 
         .form-message.success {
-            background: rgba(16, 185, 129, 0.2);
-            border: 1px solid var(--accent);
-            color: var(--accent);
+            background: #d1fae5;
+            color: #065f46;
         }
 
         .form-message.error {
-            background: rgba(239, 68, 68, 0.2);
-            border: 1px solid #ef4444;
-            color: #ef4444;
+            background: #fee2e2;
+            color: #991b1b;
         }
 
-        /* Footer */
-        footer {
-            background: var(--darker);
-            padding: 40px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        footer p {
-            font-size: 14px;
-        }
-
-        /* WhatsApp Button */
+        /* WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 32px;
+            right: 32px;
             width: 60px;
             height: 60px;
             background: #25d366;
@@ -793,8 +838,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-            z-index: 999;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 100;
             text-decoration: none;
             font-size: 32px;
             transition: all 0.3s;
@@ -802,430 +847,397 @@
 
         .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
         /* Responsive */
-        @media (max-width: 1200px) {
-            .hero-content {
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 48px; }
+            .section-title { font-size: 40px; }
+            .problem-grid,
+            .solution-grid,
+            .process-steps {
                 grid-template-columns: 1fr;
             }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-content,
-            .contact-content {
+            .results-grid {
                 grid-template-columns: 1fr;
             }
-
-            .case-studies-grid {
-                grid-template-columns: 1fr;
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
+            .nav-links { display: none; }
+            .hero-cta-group,
+            .hero-proof {
+                flex-direction: column;
             }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 60px 20px;
-            }
-
-            .hero-main {
-                padding: 50px 30px;
-            }
-
-            .hero-main h1 {
-                font-size: 42px;
-            }
-
-            .services,
-            .portfolio-section,
-            .case-studies,
-            .about,
-            .certifications,
-            .contact {
-                padding: 60px 20px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header h2 {
-                font-size: 36px;
-            }
-
-            .slide {
+            .portfolio-slider {
                 padding: 40px 20px;
             }
-
-            .slider-arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-            }
-
-            .slider-arrow.prev {
-                left: 10px;
-            }
-
-            .slider-arrow.next {
-                right: 10px;
-            }
-
-            .contact-form {
-                padding: 30px 20px;
-            }
-
-            .form-row {
+            .slider-arrow { display: none; }
+            .footer-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">Shahadat<span>.</span></div>
+    <!-- Sticky Bar -->
+    <div class="sticky-bar">
+        🔥 Limited Spots: I'm taking 3 new clients this month <span>BOOK NOW</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SHAHADAT HUSAIN</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#work">Work</a></li>
             </ul>
-            <a href="#contact" class="btn-contact">Hire Me</a>
-        </nav>
-    </header>
+            <button class="nav-cta open-modal">Get Your Free Audit</button>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-main">
-                <span class="hero-label">Performance Marketer</span>
-                <h1>I Turn Clicks Into Customers</h1>
-                <p>Data-driven performance marketing that scales revenue — not just traffic. Expert in Meta Ads, Google Ads, and conversion optimization.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Let's Talk</button>
-                    <a href="/cv.pdf" class="btn-secondary" download>Download CV</a>
-                </div>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">✓ Certified Performance Marketer</div>
+            <h1>Stop Wasting Money On Ads That <span class="highlight">Don't Convert</span></h1>
+            <p class="hero-subheading">I help businesses scale to £100k+/month with Meta Ads, Google Ads & proven conversion systems that actually deliver ROI — not vanity metrics.</p>
+            <div class="hero-cta-group">
+                <button class="btn btn-primary open-modal">Book Free Strategy Call</button>
+                <a href="#results" class="btn btn-secondary">See Real Results</a>
             </div>
-            <div class="hero-stats">
-                <div class="stat-card yellow">
-                    <div class="stat-number">£50k+</div>
-                    <div class="stat-label">Ad Spend Managed</div>
+            <div class="hero-proof">
+                <div class="proof-item">
+                    <div class="proof-number">£50k+</div>
+                    <div class="proof-label">Ad Spend Managed</div>
                 </div>
-                <div class="stat-card green">
-                    <div class="stat-number">40%</div>
-                    <div class="stat-label">Order Increase</div>
+                <div class="proof-item">
+                    <div class="proof-number">3.5x</div>
+                    <div class="proof-label">Average ROAS</div>
                 </div>
-                <div class="stat-card blue">
-                    <div class="stat-number">35%</div>
-                    <div class="stat-label">Higher Conversions</div>
+                <div class="proof-item">
+                    <div class="proof-number">40%</div>
+                    <div class="proof-label">Order Increase</div>
+                </div>
+                <div class="proof-item">
+                    <div class="proof-number">35%</div>
+                    <div class="proof-label">Higher Conversions</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="section-header">
-            <h2>What I Do</h2>
-            <p>Comprehensive performance marketing solutions</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card yellow">
-                <div class="service-icon">📊</div>
-                <h3>Paid Advertising</h3>
-                <p>Meta Ads, Google Ads, and TikTok campaigns that maximize ROI</p>
-            </div>
-            <div class="service-card green">
-                <div class="service-icon">🎯</div>
-                <h3>Conversion Tracking</h3>
-                <p>GA4, GTM, and Conversion API implementation</p>
-            </div>
-            <div class="service-card blue">
-                <div class="service-icon">⚡</div>
-                <h3>CRO & Landing Pages</h3>
-                <p>Optimize user journeys for maximum conversions</p>
-            </div>
-            <div class="service-card purple">
-                <div class="service-icon">📈</div>
-                <h3>Analytics & Reporting</h3>
-                <p>Custom dashboards and KPI tracking</p>
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-label">THE PROBLEM</div>
+            <h2 class="section-title">Your Current Marketing Agency Is Failing You</h2>
+            <p class="section-subtitle">And you're bleeding money every single day. Here's what's really happening...</p>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>❌ You're Getting Clicks, Not Customers</h3>
+                    <p>Your agency celebrates high CTRs while your bank account stays empty. Traffic means nothing without conversions.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ Zero Accountability or Transparency</h3>
+                    <p>Vague reports, missing data, and excuses. You have no idea if your money is actually working or being wasted.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ Cookie-Cutter Campaigns</h3>
+                    <p>They run the same generic playbook for everyone. Your business deserves a custom strategy, not recycled templates.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Slider -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="section-header">
-            <h2>My Work</h2>
-            <p>Real campaigns, real results</p>
+    <!-- Solution Section -->
+    <section id="services" class="solution-section">
+        <div class="container">
+            <div class="section-label">THE SOLUTION</div>
+            <h2 class="section-title">How I Actually Grow Your Business</h2>
+            <p class="section-subtitle">Performance marketing that's laser-focused on one thing: Making you more money than you spend.</p>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">🎯</div>
+                    <h3>Meta Ads That Convert</h3>
+                    <p>Stop burning cash on Facebook & Instagram ads that don't work. I build campaigns that turn cold audiences into paying customers.</p>
+                    <ul>
+                        <li>Custom audience research & targeting</li>
+                        <li>High-converting ad creative & copy</li>
+                        <li>Conversion API & pixel setup</li>
+                        <li>A/B testing & optimization</li>
+                        <li>Retargeting campaigns that close</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">🚀</div>
+                    <h3>Google Ads That Scale</h3>
+                    <p>Capture high-intent buyers the moment they're searching. Search, Display, Shopping & YouTube ads optimized for profit.</p>
+                    <ul>
+                        <li>Search campaigns for ready buyers</li>
+                        <li>Shopping campaigns for e-commerce</li>
+                        <li>Display remarketing strategies</li>
+                        <li>YouTube video ads that convert</li>
+                        <li>Local Service Ads for local businesses</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">📈</div>
+                    <h3>Conversion Optimization</h3>
+                    <p>More traffic won't save a broken funnel. I fix what's stopping visitors from becoming customers.</p>
+                    <ul>
+                        <li>Landing page optimization</li>
+                        <li>GA4 & GTM implementation</li>
+                        <li>Funnel analysis & CRO</li>
+                        <li>Heat mapping & user testing</li>
+                        <li>Checkout flow optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results-section">
+        <div class="container">
+            <div class="section-label" style="color: #10b981;">PROVEN RESULTS</div>
+            <h2 class="section-title" style="color: white;">Real Businesses. Real Growth. Real ROI.</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Here's what happens when you stop guessing and start executing with data.</p>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-header">
+                        <div class="result-icon">🧸</div>
+                        <div>
+                            <h3>Baby Toy E-commerce</h3>
+                            <div class="result-meta">Bangladesh • Meta Ads</div>
+                        </div>
+                    </div>
+                    <div class="result-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">287%</div>
+                            <div class="stat-label">ROAS Increase</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">£48k</div>
+                            <div class="stat-label">Revenue Generated</div>
+                        </div>
+                    </div>
+                    <ul class="result-list">
+                        <li>Built custom audiences targeting new parents</li>
+                        <li>Created emotion-driven ad creatives</li>
+                        <li>Implemented Conversion API for accurate tracking</li>
+                        <li>Scaled from £500/day to £2k/day profitably</li>
+                    </ul>
+                </div>
+                <div class="result-card">
+                    <div class="result-header">
+                        <div class="result-icon">💼</div>
+                        <div>
+                            <h3>B2B Lead Generation</h3>
+                            <div class="result-meta">SaaS Company • Google Ads</div>
+                        </div>
+                    </div>
+                    <div class="result-stats">
+                        <div class="stat-box">
+                            <div class="stat-value">-50%</div>
+                            <div class="stat-label">Cost Per Lead</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value">183</div>
+                            <div class="stat-label">Qualified Leads</div>
+                        </div>
+                    </div>
+                    <ul class="result-list">
+                        <li>Dropped CPL from $8.42 to $4.31</li>
+                        <li>Rebuilt targeting for decision-makers</li>
+                        <li>Created high-converting landing pages</li>
+                        <li>Set up attribution & lead scoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-label">MY PROCESS</div>
+            <h2 class="section-title">Exactly How I Scale Your Business</h2>
+            <p class="section-subtitle">No fluff. No secrets. Here's the exact 4-step system I use to deliver results.</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Deep-Dive Audit</h3>
+                    <p>I analyze your current campaigns, identify leaks, and find hidden opportunities most agencies miss.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Custom Strategy</h3>
+                    <p>No templates. I build a data-backed plan specifically for your business, market, and goals.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Execute & Optimize</h3>
+                    <p>Launch campaigns, track every metric, and continuously improve based on real performance data.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Scale Profitably</h3>
+                    <p>Once we hit profitable ROAS, we scale aggressively while maintaining or improving conversion rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="work" class="portfolio-section">
+        <div class="container">
+            <div class="section-label">MY WORK</div>
+            <h2 class="section-title">Real Campaign Screenshots</h2>
+            <p class="section-subtitle">These aren't stock photos. These are actual dashboards from campaigns I've managed.</p>
         </div>
         <div class="portfolio-slider">
             <button class="slider-arrow prev" onclick="previousSlide()">‹</button>
             <button class="slider-arrow next" onclick="nextSlide()">›</button>
-            
             <div class="slider-wrapper" id="sliderWrapper">
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_9_qi1gyg.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_7_rc7ccy.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_24_evc0sd.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_8_jngsg8.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_25_y8bh1g.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_6_mm3vff.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_5_nzztmi.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_4_tfvqdv.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078918/Md_Shahadat_Work_23_fpdmtt.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_22_nw30ms.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_20_zrstpz.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_3_a4wsgm.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_21_hhhhja.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_2_cj796l.jpg" alt="My Work" loading="lazy"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078917/Md_Shahadat_Work_1_w1edvj.jpg" alt="My Work" loading="lazy"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="Campaign Result"></div>
+                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="Campaign Result"></div>
             </div>
-            
             <div class="slider-nav" id="sliderNav"></div>
         </div>
     </section>
 
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="case-studies">
-        <div class="section-header">
-            <h2>Case Studies</h2>
-            <p>Proven results across different industries</p>
-        </div>
-        <div class="case-studies-grid">
-            <div class="case-study">
-                <div class="case-study-images">
-                    <img src="https://i.ibb.co/R4TY72Hz/FB-IMG-1755934860649.jpg" alt="Baby Toy Campaign">
-                    <img src="https://i.ibb.co/5h58YVHJ/FB-IMG-1755934857527.jpg" alt="Baby Toy Campaign">
-                    <img src="https://i.ibb.co/Hp9zx6F8/FB-IMG-1755934855007.jpg" alt="Baby Toy Campaign">
-                </div>
-                <div class="case-study-content">
-                    <h3>Baby Toy Brand – Bangladesh</h3>
-                    <ul>
-                        <li>Developed custom audiences and lookalike targeting strategies</li>
-                        <li>Created emotion-driven creatives focusing on parents, safety, and child learning</li>
-                        <li>Achieved significant growth in sales, engagement, and brand trust</li>
-                        <li>Optimised campaigns for maximum ROAS across Meta platforms</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="case-study">
-                <div class="case-study-placeholder">💰</div>
-                <div class="case-study-content">
-                    <h3>Lead Generation Funnel Optimisation</h3>
-                    <ul>
-                        <li>Cold traffic CPL: $8.42</li>
-                        <li>Retargeting CPL: $4.31</li>
-                        <li>Achieved 50% CPL reduction through creative optimization and strategic retargeting</li>
-                        <li>Implemented advanced audience segmentation and funnel optimization</li>
-                    </ul>
-                </div>
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="guarantee-badge">✓</div>
+                <h2>My Results-Or-Refund Guarantee</h2>
+                <p>If I don't improve your conversion rate or lower your cost per acquisition within 90 days, you get 100% of your money back. No questions asked. That's how confident I am in my systems.</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <div class="about-image">
-                <img src="https://i.ibb.co/ns1512Jz/image.png" alt="Md Shahadat Husain">
-            </div>
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>I'm a performance marketer with a profit-first mindset. Every campaign I run is built on data, tested for efficiency, and optimised for scalable growth.</p>
-                <p>I've managed £50k+ in social ad spend and £30k+ in PPC campaigns, delivering a 40% lift in orders and conversion rates that consistently beat benchmarks by 35%.</p>
-                <p>My expertise spans Meta Ads, Google Ads, and TikTok Ads, backed by advanced tracking with GA4, GTM, and Conversion API. I don't just drive traffic — I turn clicks into customers and revenue.</p>
-                
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <span>Meta Ads Management</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>Google Ads & PPC</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>GA4 & GTM Setup</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span>Conversion API</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" class="certifications">
-        <div class="section-header">
-            <h2>Certifications</h2>
-            <p>Validated expertise and continuous learning</p>
-        </div>
-        <div class="cert-container">
-            <a href="https://www.coursera.org/account/accomplishments/verify/MW3YHYE0CD0A" target="_blank" class="cert-link">
-                <img src="https://i.ibb.co/vvkcCGp0/CERTIFICATE-LANDING-PAGE-MW3-YHYE0-CD0-A.jpg" alt="Certification" class="cert-image">
-            </a>
-            <h3 class="cert-title">Verified Certificate</h3>
-            <p class="cert-course">Foundations of Digital Marketing and E-commerce</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-content">
-            <div class="contact-info">
-                <h2>Let's Work Together</h2>
-                <p>Ready to scale your business with performance marketing? Let's discuss how I can help drive real revenue for your business.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <strong>Email</strong><br>
-                            <a href="mailto:husainrashed217@gmail.com">husainrashed217@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <strong>Location</strong><br>
-                            Sylhet, Bangladesh
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💬</div>
-                        <div>
-                            <strong>WhatsApp</strong><br>
-                            <a href="https://wa.me/8801959238319" target="_blank">+880 1959 238319</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a href="https://www.facebook.com/shahadat.mr.Google" target="_blank" class="social-icon">f</a>
-                    <a href="https://www.instagram.com/shahadat_husain_rashed/" target="_blank" class="social-icon">📷</a>
-                    <a href="https://www.linkedin.com/in/md-shahadat-husain/" target="_blank" class="social-icon">in</a>
-                </div>
-            </div>
-            
-            <div class="contact-form">
-                <h3>Send me a message</h3>
-                <form id="contactForm">
-                    <div class="form-message" id="formMessage"></div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Full Name *</label>
-                            <input type="text" name="from_name" required placeholder="John Doe">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Email *</label>
-                            <input type="email" name="from_email" required placeholder="john@company.com">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Phone *</label>
-                            <input type="tel" name="phone" required placeholder="+1 234 567 8900">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Business Name *</label>
-                            <input type="text" name="business_name" required placeholder="Your Company">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Business Category *</label>
-                            <input type="text" name="business_category" required placeholder="E-commerce, SaaS, etc.">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Monthly Ad Budget *</label>
-                            <select name="ad_budget" required>
-                                <option value="">Select budget range</option>
-                                <option value="Under $1,000">Under $1,000</option>
-                                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
-                                <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                                <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                                <option value="$25,000+">$25,000+</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Main Goal *</label>
-                        <select name="main_goal" required>
-                            <option value="">What's your primary goal?</option>
-                            <option value="Generate Leads">Generate Leads</option>
-                            <option value="Increase Sales">Increase Sales</option>
-                            <option value="Local Growth">Local Growth</option>
-                            <option value="Scaling Existing Campaigns">Scaling Existing Campaigns</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" placeholder="Tell me about your project and goals..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-primary" id="submitBtn" style="width: 100%;">Send Message</button>
-                </form>
-            </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready To Stop Wasting Money?</h2>
+            <p>Book a free 30-minute strategy call. I'll audit your current campaigns and show you exactly what's broken (and how to fix it).</p>
+            <button class="btn btn-primary open-modal" style="font-size: 18px; padding: 20px 48px;">Book Your Free Audit Now</button>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Md Shahadat Husain. All rights reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Shahadat Husain</h3>
+                <p>Performance Marketing Expert helping businesses scale profitably with Meta Ads, Google Ads & conversion optimization.</p>
+                <p>📍 Sylhet, Bangladesh</p>
+                <p>📧 husainrashed217@gmail.com</p>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Meta Ads Management</a></li>
+                    <li><a href="#">Google Ads (PPC)</a></li>
+                    <li><a href="#">Conversion Optimization</a></li>
+                    <li><a href="#">Analytics Setup</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#results">Case Studies</a></li>
+                    <li><a href="#work">Portfolio</a></li>
+                    <li><a href="#process">How It Works</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/md-shahadat-husain/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.facebook.com/shahadat.mr.Google" target="_blank">Facebook</a></li>
+                    <li><a href="https://wa.me/8801959238319" target="_blank">WhatsApp</a></li>
+                    <li><a href="mailto:husainrashed217@gmail.com">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Shahadat Husain. All rights reserved.</p>
+        </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/8801959238319?text=Hi%20Shahadat%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" class="whatsapp-float">💬</a>
+    <!-- Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('active')">&times;</button>
+            <h2>Book Your Free Strategy Call</h2>
+            <form id="contactForm">
+                <div class="form-message" id="formMessage"></div>
+                <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" name="from_name" required placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="from_email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" name="phone" required placeholder="+1 234 567 8900">
+                </div>
+                <div class="form-group">
+                    <label>Business Name *</label>
+                    <input type="text" name="business_name" required placeholder="Your Company">
+                </div>
+                <div class="form-group">
+                    <label>Monthly Ad Budget *</label>
+                    <select name="ad_budget" required>
+                        <option value="">Select budget</option>
+                        <option value="Under $1,000">Under $1,000</option>
+                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                        <option value="$10,000+">$10,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>What's your biggest challenge?</label>
+                    <textarea name="message" placeholder="Tell me what's not working..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Book My Free Audit</button>
+            </form>
+        </div>
+    </div>
 
-    <!-- EmailJS SDK -->
+    <!-- WhatsApp -->
+    <a href="https://wa.me/8801959238319?text=Hi%20Shahadat%2C%20I%20want%20to%20discuss%20scaling%20my%20business" target="_blank" class="whatsapp-float">💬</a>
+
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS with Public Key
-        (function() {
-            emailjs.init('0T7tiDjGh4drTDrew');
-        })();
+        emailjs.init('0T7tiDjGh4drTDrew');
 
-        // Slider functionality
+        // Slider
         let currentSlide = 0;
         const sliderWrapper = document.getElementById('sliderWrapper');
         const slides = sliderWrapper.querySelectorAll('.slide');
         const sliderNav = document.getElementById('sliderNav');
         
-        // Create navigation dots
         slides.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.className = 'slider-dot';
@@ -1256,62 +1268,44 @@
             updateSlider();
         }
 
-        // Auto-slide every 3 seconds (faster)
-        setInterval(nextSlide, 3000);
+        setInterval(nextSlide, 4000);
 
-        // Contact Form Submission
+        // Modal
+        document.querySelectorAll('.open-modal').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('contactModal').classList.add('active');
+            });
+        });
+
+        // Form
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const formMessage = document.getElementById('formMessage');
-            const submitBtn = document.getElementById('submitBtn');
+            const submitBtn = this.querySelector('button[type="submit"]');
             
-            // Disable submit button
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
 
-            // Send form using EmailJS
             emailjs.sendForm('service_uonopr6', 'template_7zrq0tm', this)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    
-                    // Show success message
-                    formMessage.textContent = '✓ Message sent successfully! I\'ll get back to you within 24 hours.';
+                .then(() => {
+                    formMessage.textContent = '✓ Booked! Check your email for next steps.';
                     formMessage.className = 'form-message success';
                     formMessage.style.display = 'block';
-                    
-                    // Reset form
-                    document.getElementById('contactForm').reset();
-                    
-                    // Hide message after 5 seconds
+                    this.reset();
                     setTimeout(() => {
+                        document.getElementById('contactModal').classList.remove('active');
                         formMessage.style.display = 'none';
-                    }, 5000);
-                    
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    
-                    // Show error message
-                    formMessage.textContent = '✗ Failed to send message. Please email me directly at husainrashed217@gmail.com or try again.';
+                    }, 3000);
+                })
+                .catch(() => {
+                    formMessage.textContent = '✗ Failed. Email me directly.';
                     formMessage.className = 'form-message error';
                     formMessage.style.display = 'block';
                 })
-                .finally(function() {
-                    // Re-enable submit button
+                .finally(() => {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
+                    submitBtn.textContent = 'Book My Free Audit';
                 });
-        });
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
         });
     </script>
 </body>
