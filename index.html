@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Shahadat Husain | Performance Marketing Expert That Drives Real ROI</title>
-    <meta name="description" content="Stop burning money on ads that don't work. I help businesses generate predictable revenue with Meta Ads, Google Ads & data-driven conversion strategies.">
+    <title>Md Shahadat Husain | Performance Marketing Expert That Delivers Real ROI</title>
+    <meta name="description" content="Award-winning performance marketer specializing in Meta Ads, Google Ads & conversion optimization. £50k+ ad spend managed with proven results.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,36 +15,35 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #6366f1;
-            --accent: #10b981;
-            --dark: #0f172a;
-            --red: #ef4444;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            color: #1e293b;
-            line-height: 1.6;
+        html {
+            -webkit-text-size-adjust: 100%;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Top Bar */
-        .top-bar {
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Announcement Bar */
+        .announcement-bar {
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
             color: white;
             text-align: center;
-            padding: 12px 20px;
+            padding: 10px 16px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
-        .top-bar span {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-left: 8px;
-            font-size: 13px;
+        .announcement-bar span {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-left: 6px;
+            font-size: 12px;
         }
 
         /* Navigation */
@@ -52,105 +51,134 @@
             position: sticky;
             top: 0;
             background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            z-index: 100;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 20px 24px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 900;
-            color: var(--dark);
+            color: #0f172a;
+            letter-spacing: -0.5px;
         }
 
-        .nav-menu {
+        .desktop-menu {
             display: none;
             gap: 32px;
             list-style: none;
         }
 
-        .nav-menu a {
+        .desktop-menu a {
             color: #475569;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .desktop-menu a:hover {
+            color: #6366f1;
         }
 
         .nav-cta {
-            background: var(--dark);
+            background: #0f172a;
             color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 6px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 13px;
             border: none;
             cursor: pointer;
             white-space: nowrap;
+            transition: all 0.3s;
         }
 
-        /* Hero */
+        .nav-cta:hover {
+            background: #6366f1;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
         .hero {
-            background: var(--dark);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 60px 24px 80px;
+            padding: 48px 20px 60px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-container {
-            max-width: 1200px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1280px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-badge {
             display: inline-block;
             background: rgba(16, 185, 129, 0.2);
             color: #10b981;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 20px;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 800;
+            margin-bottom: 16px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .hero h1 {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 900;
             line-height: 1.15;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             letter-spacing: -1px;
         }
 
         .hero h1 .highlight {
             color: #10b981;
+            display: block;
         }
 
-        .hero-subtext {
-            font-size: 18px;
+        .hero-description {
+            font-size: 16px;
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
-        .hero-cta-group {
+        .hero-ctas {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 48px;
+            margin-bottom: 40px;
         }
 
         .btn {
-            padding: 16px 32px;
-            border-radius: 10px;
+            padding: 14px 28px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15px;
             text-align: center;
             cursor: pointer;
             border: none;
@@ -165,229 +193,257 @@
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
         }
 
+        .btn-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
+        }
+
         .btn-secondary {
             background: white;
-            color: var(--dark);
+            color: #0f172a;
+        }
+
+        .btn-secondary:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
         }
 
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            gap: 20px;
         }
 
-        .stat-box {
+        .stat-item {
             text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 900;
             color: #10b981;
             margin-bottom: 4px;
+            letter-spacing: -1px;
         }
 
         .stat-label {
-            font-size: 13px;
+            font-size: 12px;
             color: rgba(255, 255, 255, 0.7);
             font-weight: 600;
         }
 
         /* Section */
         .section {
-            padding: 60px 24px;
+            padding: 56px 20px;
         }
 
-        .container {
-            max-width: 1200px;
+        .section-inner {
+            max-width: 1280px;
             margin: 0 auto;
         }
 
         .section-label {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 800;
-            color: var(--primary);
+            color: #6366f1;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 12px;
         }
 
         .section-title {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 900;
-            color: var(--dark);
+            color: #0f172a;
             line-height: 1.2;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             letter-spacing: -1px;
         }
 
-        .section-subtitle {
-            font-size: 18px;
+        .section-description {
+            font-size: 16px;
             color: #64748b;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             line-height: 1.6;
         }
 
-        /* Problem Cards */
+        /* Problem Section */
+        .problem-section {
+            background: white;
+        }
+
         .problem-grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #ef4444;
+        }
+
+        .problem-card h3 {
+            font-size: 17px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .problem-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+        }
+
+        .service-grid {
             display: grid;
             gap: 20px;
         }
 
-        .problem-card {
-            background: #fef2f2;
-            padding: 28px;
-            border-radius: 12px;
-            border-left: 4px solid var(--red);
-        }
-
-        .problem-card h3 {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .problem-card p {
-            font-size: 15px;
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        /* Solution Cards */
-        .solution-section {
-            background: #f8fafc;
-        }
-
-        .solution-grid {
-            display: grid;
-            gap: 24px;
-        }
-
-        .solution-card {
+        .service-card {
             background: white;
-            padding: 32px;
+            padding: 28px;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            border-top: 4px solid var(--primary);
+            border-top: 3px solid #6366f1;
+            transition: all 0.3s;
         }
 
-        .solution-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+        .service-card:active {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 26px;
+            margin-bottom: 16px;
         }
 
-        .solution-card h3 {
-            font-size: 20px;
+        .service-card h3 {
+            font-size: 18px;
             font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 12px;
+            color: #0f172a;
+            margin-bottom: 10px;
         }
 
-        .solution-card p {
-            font-size: 15px;
+        .service-card p {
+            font-size: 14px;
             color: #64748b;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
-        .solution-card ul {
+        .service-card ul {
             list-style: none;
         }
 
-        .solution-card li {
-            padding: 8px 0;
-            padding-left: 24px;
+        .service-card li {
+            padding: 6px 0;
+            padding-left: 22px;
             position: relative;
-            font-size: 14px;
+            font-size: 13px;
             color: #475569;
+            line-height: 1.5;
         }
 
-        .solution-card li::before {
+        .service-card li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: #10b981;
             font-weight: bold;
+            font-size: 14px;
         }
 
         /* Results Section */
         .results-section {
-            background: var(--dark);
+            background: #0f172a;
             color: white;
         }
 
         .result-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 32px;
+            padding: 28px;
             border-radius: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .result-header {
             display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 24px;
-            padding-bottom: 20px;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .result-icon {
-            width: 60px;
-            height: 60px;
+            width: 52px;
+            height: 52px;
             background: linear-gradient(135deg, #10b981, #059669);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 26px;
             flex-shrink: 0;
         }
 
-        .result-card h3 {
-            font-size: 22px;
+        .result-title h3 {
+            font-size: 19px;
             font-weight: 900;
             margin-bottom: 4px;
         }
 
         .result-meta {
-            font-size: 13px;
+            font-size: 12px;
             color: rgba(255, 255, 255, 0.6);
             font-weight: 600;
         }
 
         .result-stats {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        .stat-item {
+        .stat-box {
             background: rgba(255, 255, 255, 0.05);
-            padding: 16px;
+            padding: 14px;
             border-radius: 10px;
             text-align: center;
         }
 
         .stat-value {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
             color: #10b981;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .stat-text {
-            font-size: 12px;
+            font-size: 11px;
             color: rgba(255, 255, 255, 0.7);
         }
 
@@ -396,11 +452,11 @@
         }
 
         .result-list li {
-            padding: 10px 0;
-            padding-left: 28px;
+            padding: 8px 0;
+            padding-left: 24px;
             position: relative;
             color: rgba(255, 255, 255, 0.9);
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.5;
         }
 
@@ -412,56 +468,74 @@
             font-weight: bold;
         }
 
-        /* Process Steps */
+        /* Process Section */
+        .process-section {
+            background: white;
+        }
+
         .process-steps {
             display: grid;
-            gap: 32px;
+            gap: 24px;
         }
 
         .process-step {
-            text-align: center;
+            background: #f8fafc;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid #6366f1;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
         }
 
         .step-number {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--primary), #8b5cf6);
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 20px;
             font-weight: 900;
             color: white;
-            margin: 0 auto 16px;
-            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+            flex-shrink: 0;
         }
 
         .process-step h3 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 10px;
+            color: #0f172a;
         }
 
         .process-step p {
-            font-size: 15px;
+            font-size: 14px;
             color: #64748b;
             line-height: 1.6;
+            padding-left: 58px;
         }
 
         /* Portfolio Slider */
+        .portfolio-section {
+            background: #f8fafc;
+        }
+
         .portfolio-slider {
-            background: var(--dark);
+            background: #0f172a;
             border-radius: 16px;
-            padding: 40px 20px;
-            margin-top: 40px;
+            padding: 32px 16px;
+            margin-top: 32px;
             position: relative;
+            overflow: hidden;
         }
 
         .slider-wrapper {
             display: flex;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease-out;
         }
 
         .slide {
@@ -469,22 +543,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 8px;
         }
 
         .slide img {
-            max-width: 95%;
-            max-height: 400px;
+            max-width: 100%;
+            height: auto;
+            max-height: 320px;
             object-fit: contain;
-            border-radius: 12px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
 
-        .slider-nav {
+        .slider-controls {
             position: absolute;
-            bottom: 20px;
+            bottom: 16px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             gap: 6px;
+            z-index: 10;
         }
 
         .slider-dot {
@@ -494,6 +572,8 @@
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: all 0.3s;
+            border: none;
+            padding: 0;
         }
 
         .slider-dot.active {
@@ -502,24 +582,39 @@
             background: white;
         }
 
-        .slider-arrow {
+        .slider-arrows {
             position: absolute;
             top: 50%;
+            width: 100%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 8px;
+            pointer-events: none;
         }
 
-        .slider-arrow.prev { left: 10px; }
-        .slider-arrow.next { right: 10px; }
+        .slider-arrow {
+            pointer-events: all;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
 
-        /* Guarantee */
+        .slider-arrow:active {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Guarantee Section */
         .guarantee-section {
             background: linear-gradient(135deg, #10b981, #059669);
             color: white;
@@ -527,115 +622,122 @@
         }
 
         .guarantee-box {
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.1);
-            padding: 40px 24px;
+            padding: 32px 24px;
             border-radius: 16px;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        .guarantee-badge {
-            width: 80px;
-            height: 80px;
+        .guarantee-icon {
+            width: 72px;
+            height: 72px;
             background: white;
             color: #10b981;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            margin: 0 auto 20px;
+            font-size: 36px;
+            margin: 0 auto 16px;
             font-weight: 900;
         }
 
         .guarantee-box h2 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .guarantee-box p {
-            font-size: 16px;
-            line-height: 1.7;
+            font-size: 15px;
+            line-height: 1.6;
             color: rgba(255, 255, 255, 0.95);
         }
 
         /* CTA Section */
         .cta-section {
-            background: var(--dark);
+            background: #0f172a;
             text-align: center;
             color: white;
         }
 
         .cta-section h2 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 900;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             letter-spacing: -1px;
         }
 
         .cta-section p {
-            font-size: 18px;
+            font-size: 16px;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             line-height: 1.6;
         }
 
         /* Footer */
         footer {
             background: #020617;
-            padding: 60px 24px 30px;
+            padding: 48px 20px 24px;
             color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
         }
 
         .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 32px;
+            margin-bottom: 32px;
         }
 
         .footer-brand h3 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 900;
             color: white;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-brand p {
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 8px;
         }
 
-        .footer-links h4 {
-            font-size: 13px;
+        .footer-section h4 {
+            font-size: 12px;
             font-weight: 800;
             color: white;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .footer-links ul {
+        .footer-section ul {
             list-style: none;
         }
 
-        .footer-links a {
+        .footer-section a {
             color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 2.2;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: white;
         }
 
         .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 24px;
+            padding-top: 20px;
             text-align: center;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         /* Modal */
@@ -643,12 +745,13 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            align-items: center;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            align-items: flex-start;
             justify-content: center;
             padding: 20px;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .modal.active {
@@ -657,44 +760,48 @@
 
         .modal-content {
             background: white;
-            max-width: 550px;
             width: 100%;
-            border-radius: 20px;
-            padding: 40px 24px;
+            max-width: 500px;
+            border-radius: 16px;
+            padding: 32px 24px;
             position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
+            margin: auto;
         }
 
         .modal-close {
             position: absolute;
-            top: 16px;
-            right: 16px;
+            top: 12px;
+            right: 12px;
             background: #f1f5f9;
             border: none;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             cursor: pointer;
             font-size: 18px;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal h2 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 900;
-            color: var(--dark);
-            margin-bottom: 24px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            padding-right: 32px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .form-group label {
             display: block;
             font-size: 13px;
             font-weight: 700;
-            color: var(--dark);
+            color: #0f172a;
             margin-bottom: 6px;
         }
 
@@ -705,29 +812,30 @@
             padding: 12px 14px;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
-            font-size: 15px;
+            font-size: 14px;
             font-family: inherit;
+            transition: border-color 0.2s;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: #6366f1;
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 90px;
         }
 
         .form-message {
-            padding: 14px;
+            padding: 12px 16px;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             display: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .form-message.success {
@@ -740,71 +848,137 @@
             color: #991b1b;
         }
 
-        /* WhatsApp */
+        /* WhatsApp Float */
         .whatsapp-float {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 56px;
-            height: 56px;
+            bottom: 20px;
+            right: 20px;
+            width: 54px;
+            height: 54px;
             background: #25d366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 100;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            z-index: 1500;
             text-decoration: none;
-            font-size: 28px;
+            font-size: 26px;
+            transition: all 0.3s;
         }
 
-        /* Tablet & Desktop */
-        @media (min-width: 768px) {
-            .top-bar {
-                font-size: 15px;
-            }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
 
-            .nav-menu {
-                display: flex;
-            }
-
-            .hero {
-                padding: 100px 40px 120px;
+        /* Tablet Styles */
+        @media (min-width: 640px) {
+            .announcement-bar {
+                font-size: 14px;
             }
 
             .hero h1 {
-                font-size: 56px;
+                font-size: 42px;
             }
 
-            .hero-subtext {
-                font-size: 20px;
-            }
-
-            .hero-cta-group {
-                flex-direction: row;
-                gap: 16px;
-            }
-
-            .btn {
-                display: inline-block;
+            .hero-description {
+                font-size: 18px;
             }
 
             .hero-stats {
                 grid-template-columns: repeat(4, 1fr);
             }
 
-            .section {
-                padding: 100px 40px;
+            .stat-number {
+                font-size: 32px;
             }
 
             .section-title {
-                font-size: 48px;
+                font-size: 36px;
             }
 
             .problem-grid,
-            .solution-grid {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .slide img {
+                max-height: 420px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .nav-container {
+                padding: 18px 32px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .desktop-menu {
+                display: flex;
+            }
+
+            .nav-cta {
+                padding: 11px 24px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 80px 32px 100px;
+            }
+
+            .hero h1 {
+                font-size: 56px;
+                max-width: 900px;
+            }
+
+            .hero-description {
+                font-size: 20px;
+                max-width: 700px;
+            }
+
+            .hero-ctas {
+                flex-direction: row;
+                gap: 16px;
+                max-width: 500px;
+            }
+
+            .btn {
+                padding: 16px 36px;
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 80px 32px;
+            }
+
+            .section-title {
+                font-size: 44px;
+            }
+
+            .section-description {
+                font-size: 18px;
+                max-width: 700px;
+            }
+
+            .problem-grid,
+            .service-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 32px;
+                gap: 28px;
             }
 
             .process-steps {
@@ -812,36 +986,37 @@
             }
 
             .portfolio-slider {
-                padding: 80px 60px;
-            }
-
-            .slide img {
-                max-height: 600px;
-            }
-
-            .slider-arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-            }
-
-            .slider-arrow.prev { left: 30px; }
-            .slider-arrow.next { right: 30px; }
-
-            .guarantee-box {
                 padding: 60px 48px;
             }
 
+            .slide img {
+                max-height: 560px;
+            }
+
+            .slider-arrow {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+
+            .guarantee-box {
+                padding: 48px 40px;
+            }
+
             .guarantee-box h2 {
-                font-size: 36px;
+                font-size: 32px;
             }
 
             .guarantee-box p {
-                font-size: 18px;
+                font-size: 17px;
             }
 
             .cta-section h2 {
-                font-size: 48px;
+                font-size: 44px;
+            }
+
+            .cta-section p {
+                font-size: 19px;
             }
 
             .footer-grid {
@@ -849,22 +1024,22 @@
             }
 
             .modal-content {
-                padding: 56px 48px;
+                padding: 44px 40px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        🔥 Only 3 Spots Left This Month <span>BOOK NOW</span>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        🔥 Limited: Only 3 Client Spots Left This Month <span>BOOK NOW</span>
     </div>
 
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">SHAHADAT HUSAIN</div>
-            <ul class="nav-menu">
+            <ul class="desktop-menu">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#results">Results</a></li>
                 <li><a href="#process">Process</a></li>
@@ -874,30 +1049,30 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
-            <div class="hero-badge">✓ Certified Expert</div>
-            <h1>Tired Of Burning Money On Ads That <span class="highlight">Don't Convert?</span></h1>
-            <p class="hero-subtext">I help businesses generate £100k+/month with Meta Ads, Google Ads & conversion systems that turn ad spend into predictable profit.</p>
-            <div class="hero-cta-group">
+        <div class="hero-content">
+            <div class="hero-badge">✓ Performance Marketing Expert</div>
+            <h1>Stop Wasting Money On Ads That <span class="highlight">Don't Convert</span></h1>
+            <p class="hero-description">I help businesses generate £100k+/month with Meta Ads, Google Ads & conversion systems that turn ad spend into predictable, scalable profit.</p>
+            <div class="hero-ctas">
                 <button class="btn btn-primary open-modal">Get Free Strategy Call</button>
-                <a href="#results" class="btn btn-secondary">See Proven Results</a>
+                <a href="#results" class="btn btn-secondary">See Real Results</a>
             </div>
             <div class="hero-stats">
-                <div class="stat-box">
+                <div class="stat-item">
                     <div class="stat-number">£50k+</div>
                     <div class="stat-label">Ad Spend Managed</div>
                 </div>
-                <div class="stat-box">
+                <div class="stat-item">
                     <div class="stat-number">3.5x</div>
                     <div class="stat-label">Average ROAS</div>
                 </div>
-                <div class="stat-box">
+                <div class="stat-item">
                     <div class="stat-number">40%</div>
-                    <div class="stat-label">Order Growth</div>
+                    <div class="stat-label">Order Increase</div>
                 </div>
-                <div class="stat-box">
+                <div class="stat-item">
                     <div class="stat-number">35%</div>
                     <div class="stat-label">Higher Conversions</div>
                 </div>
@@ -906,69 +1081,69 @@
     </section>
 
     <!-- Problem Section -->
-    <section class="section">
-        <div class="container">
+    <section class="section problem-section">
+        <div class="section-inner">
             <div class="section-label">THE PROBLEM</div>
-            <h2 class="section-title">Your Marketing Agency Is Failing You</h2>
-            <p class="section-subtitle">Here's the truth: Most agencies celebrate vanity metrics while your revenue stays flat.</p>
+            <h2 class="section-title">Your Current Agency Is Burning Your Money</h2>
+            <p class="section-description">Here's the brutal truth about why your ads aren't working...</p>
             <div class="problem-grid">
                 <div class="problem-card">
-                    <h3>❌ Traffic Without Revenue</h3>
-                    <p>They show you impressive click numbers while ignoring the only metric that matters: profit.</p>
+                    <h3>❌ Clicks Without Customers</h3>
+                    <p>They celebrate high CTRs while your bank account stays empty. Traffic means nothing without sales.</p>
                 </div>
                 <div class="problem-card">
-                    <h3>❌ Zero Transparency</h3>
-                    <p>Vague reports and missing data. You have no clue if your money is working or being wasted.</p>
+                    <h3>❌ Zero Accountability</h3>
+                    <p>Vague reports, missing data, and excuses. You don't know if your money is working or being wasted.</p>
                 </div>
                 <div class="problem-card">
-                    <h3>❌ Generic Templates</h3>
-                    <p>Same tired strategies for every client. Your business deserves custom solutions, not copy-paste campaigns.</p>
+                    <h3>❌ Generic Strategies</h3>
+                    <p>Same tired playbook for every client. Your business deserves custom solutions, not templates.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section id="services" class="section solution-section">
-        <div class="container">
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="section-inner">
             <div class="section-label">THE SOLUTION</div>
             <h2 class="section-title">How I Actually Grow Your Business</h2>
-            <p class="section-subtitle">Performance marketing focused on one thing: Making you more money than you spend.</p>
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">🎯</div>
-                    <h3>Meta Ads That Print Money</h3>
-                    <p>Stop burning cash on Facebook & Instagram ads that don't convert. I build campaigns that turn scrollers into buyers.</p>
+            <p class="section-description">Performance marketing focused on one thing: Making you more money than you spend.</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Meta Ads That Convert</h3>
+                    <p>Stop burning cash on Facebook & Instagram ads. I build campaigns that turn scrollers into buyers.</p>
                     <ul>
                         <li>Custom audience targeting</li>
                         <li>High-converting creatives</li>
                         <li>Conversion API setup</li>
-                        <li>Advanced A/B testing</li>
-                        <li>Retargeting that closes</li>
+                        <li>A/B testing & scaling</li>
+                        <li>Retargeting campaigns</li>
                     </ul>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-icon">🚀</div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
                     <h3>Google Ads That Scale</h3>
-                    <p>Capture buyers the moment they search. Search, Shopping, Display & YouTube ads optimized for maximum profit.</p>
+                    <p>Capture buyers when they're actively searching. Optimized for maximum profit, not vanity metrics.</p>
                     <ul>
-                        <li>Search for ready buyers</li>
-                        <li>Shopping for e-commerce</li>
+                        <li>Search campaigns</li>
+                        <li>Shopping ads for e-commerce</li>
                         <li>Display remarketing</li>
                         <li>YouTube video ads</li>
                         <li>Local Service Ads</li>
                     </ul>
                 </div>
-                <div class="solution-card">
-                    <div class="solution-icon">📈</div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
                     <h3>Conversion Optimization</h3>
-                    <p>More traffic won't fix a broken funnel. I identify and eliminate what's stopping visitors from buying.</p>
+                    <p>More traffic won't fix a broken funnel. I find and eliminate what's stopping visitors from buying.</p>
                     <ul>
                         <li>Landing page optimization</li>
-                        <li>GA4 & GTM setup</li>
+                        <li>GA4 & GTM implementation</li>
                         <li>Funnel analysis & CRO</li>
                         <li>User behavior tracking</li>
-                        <li>Checkout optimization</li>
+                        <li>Checkout flow fixes</li>
                     </ul>
                 </div>
             </div>
@@ -977,32 +1152,32 @@
 
     <!-- Results Section -->
     <section id="results" class="section results-section">
-        <div class="container">
-            <div class="section-label" style="color: #10b981;">REAL RESULTS</div>
-            <h2 class="section-title" style="color: white;">Proof That My Systems Work</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Here's what happens when you stop guessing and start executing with data.</p>
+        <div class="section-inner">
+            <div class="section-label" style="color: #10b981;">PROVEN RESULTS</div>
+            <h2 class="section-title" style="color: white;">Real Businesses. Real Growth. Real ROI.</h2>
+            <p class="section-description" style="color: rgba(255,255,255,0.8);">Here's what happens when you stop guessing and start executing with data.</p>
             
             <div class="result-card">
                 <div class="result-header">
                     <div class="result-icon">🧸</div>
-                    <div>
+                    <div class="result-title">
                         <h3>Baby Toy E-commerce</h3>
-                        <div class="result-meta">Bangladesh • Meta Ads</div>
+                        <div class="result-meta">Bangladesh • Meta Ads Campaign</div>
                     </div>
                 </div>
                 <div class="result-stats">
-                    <div class="stat-item">
+                    <div class="stat-box">
                         <div class="stat-value">287%</div>
                         <div class="stat-text">ROAS Increase</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-box">
                         <div class="stat-value">£48k</div>
                         <div class="stat-text">Revenue Generated</div>
                     </div>
                 </div>
                 <ul class="result-list">
-                    <li>Built custom audiences targeting new parents in Bangladesh</li>
-                    <li>Created emotion-driven ad creatives focusing on safety</li>
+                    <li>Built custom audiences targeting new parents</li>
+                    <li>Created emotion-driven ad creatives focusing on child safety</li>
                     <li>Implemented Conversion API for accurate tracking</li>
                     <li>Scaled from £500/day to £2k/day profitably</li>
                 </ul>
@@ -1011,152 +1186,167 @@
             <div class="result-card">
                 <div class="result-header">
                     <div class="result-icon">💼</div>
-                    <div>
+                    <div class="result-title">
                         <h3>B2B Lead Generation</h3>
-                        <div class="result-meta">SaaS • Google Ads</div>
+                        <div class="result-meta">SaaS Company • Google Ads</div>
                     </div>
                 </div>
                 <div class="result-stats">
-                    <div class="stat-item">
+                    <div class="stat-box">
                         <div class="stat-value">-50%</div>
                         <div class="stat-text">Cost Per Lead</div>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-box">
                         <div class="stat-value">183</div>
                         <div class="stat-text">Qualified Leads</div>
                     </div>
                 </div>
                 <ul class="result-list">
-                    <li>Dropped CPL from $8.42 to $4.31 in 60 days</li>
+                    <li>Reduced CPL from $8.42 to $4.31 in 60 days</li>
                     <li>Rebuilt targeting for C-level decision makers</li>
-                    <li>Created high-converting landing pages with 32% CR</li>
-                    <li>Set up multi-touch attribution system</li>
+                    <li>Created high-converting landing pages (32% CR)</li>
+                    <li>Implemented multi-touch attribution system</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section id="process" class="section">
-        <div class="container">
+    <section id="process" class="section process-section">
+        <div class="section-inner">
             <div class="section-label">MY PROCESS</div>
-            <h2 class="section-title">How I Scale Your Revenue</h2>
-            <p class="section-subtitle">No secrets. Here's my exact 4-step system for delivering results.</p>
+            <h2 class="section-title">Exactly How I Scale Your Revenue</h2>
+            <p class="section-description">No secrets. Here's my exact 4-step system for delivering results.</p>
             <div class="process-steps">
                 <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Deep Audit</h3>
-                    <p>Analyze your campaigns, find leaks, uncover hidden opportunities.</p>
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <h3>Deep Audit</h3>
+                    </div>
+                    <p>Analyze your campaigns, find leaks, uncover hidden opportunities most agencies miss.</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Custom Strategy</h3>
-                    <p>Build a data-backed plan for your specific business and market.</p>
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <h3>Custom Strategy</h3>
+                    </div>
+                    <p>Build a data-backed plan specifically for your business, market, and goals.</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Execute & Test</h3>
-                    <p>Launch campaigns, track metrics, optimize based on real data.</p>
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <h3>Execute & Test</h3>
+                    </div>
+                    <p>Launch campaigns, track metrics, optimize based on real performance data.</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Scale Profit</h3>
-                    <p>Once profitable, scale aggressively while improving conversion.</p>
+                    <div class="step-header">
+                        <div class="step-number">4</div>
+                        <h3>Scale Profit</h3>
+                    </div>
+                    <p>Once profitable, scale aggressively while maintaining conversion rates.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="work" class="section" style="background: #f8fafc;">
-        <div class="container">
+    <section id="work" class="section portfolio-section">
+        <div class="section-inner">
             <div class="section-label">PROOF</div>
             <h2 class="section-title">Real Campaign Dashboards</h2>
-            <p class="section-subtitle">Actual screenshots from campaigns I've managed. Not stock photos.</p>
-        </div>
-        <div class="portfolio-slider">
-            <button class="slider-arrow prev" onclick="previousSlide()">‹</button>
-            <button class="slider-arrow next" onclick="nextSlide()">›</button>
-            <div class="slider-wrapper" id="sliderWrapper">
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="Campaign"></div>
-                <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="Campaign"></div>
+            <p class="section-description">Actual screenshots from campaigns I've managed. Not stock photos.</p>
+            
+            <div class="portfolio-slider">
+                <div class="slider-arrows">
+                    <button class="slider-arrow" onclick="previousSlide()" aria-label="Previous">‹</button>
+                    <button class="slider-arrow" onclick="nextSlide()" aria-label="Next">›</button>
+                </div>
+                
+                <div class="slider-wrapper" id="sliderWrapper">
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="Campaign Result" loading="lazy"></div>
+                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="Campaign Result" loading="lazy"></div>
+                </div>
+                
+                <div class="slider-controls" id="sliderControls"></div>
             </div>
-            <div class="slider-nav" id="sliderNav"></div>
         </div>
     </section>
 
     <!-- Guarantee Section -->
     <section class="section guarantee-section">
-        <div class="container">
+        <div class="section-inner">
             <div class="guarantee-box">
-                <div class="guarantee-badge">✓</div>
+                <div class="guarantee-icon">✓</div>
                 <h2>90-Day Results Guarantee</h2>
-                <p>If I don't improve your conversion rate or lower your cost per acquisition within 90 days, you get 100% of your money back. No questions asked.</p>
+                <p>If I don't improve your conversion rate or lower your cost per acquisition within 90 days, you get 100% of your money back. No questions asked. That's how confident I am.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="section cta-section">
-        <div class="container">
+        <div class="section-inner">
             <h2>Ready To Stop Wasting Money?</h2>
-            <p>Book a free strategy call. I'll audit your campaigns and show you exactly what's broken.</p>
-            <button class="btn btn-primary open-modal" style="font-size: 18px; padding: 18px 40px;">Get Your Free Audit Now</button>
+            <p>Book a free 30-minute strategy call. I'll audit your campaigns and show you exactly what's broken (and how to fix it).</p>
+            <button class="btn btn-primary open-modal">Get Your Free Audit Now</button>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h3>Shahadat Husain</h3>
-                <p>Performance marketing expert helping businesses scale with Meta Ads, Google Ads & conversion optimization.</p>
-                <p>📍 Sylhet, Bangladesh</p>
-                <p>📧 husainrashed217@gmail.com</p>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Shahadat Husain</h3>
+                    <p>Performance marketing expert helping businesses scale with Meta Ads, Google Ads & conversion optimization.</p>
+                    <p>📍 Sylhet, Bangladesh</p>
+                    <p>📧 husainrashed217@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Meta Ads</a></li>
+                        <li><a href="#services">Google Ads</a></li>
+                        <li><a href="#services">CRO</a></li>
+                        <li><a href="#services">Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#work">Portfolio</a></li>
+                        <li><a href="#process">Process</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/md-shahadat-husain/" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://wa.me/8801959238319" target="_blank">WhatsApp</a></li>
+                        <li><a href="mailto:husainrashed217@gmail.com">Email</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#services">Meta Ads</a></li>
-                    <li><a href="#services">Google Ads</a></li>
-                    <li><a href="#services">CRO</a></li>
-                    <li><a href="#services">Analytics</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Shahadat Husain. All rights reserved.</p>
             </div>
-            <div class="footer-links">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#results">Results</a></li>
-                    <li><a href="#work">Portfolio</a></li>
-                    <li><a href="#process">Process</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/md-shahadat-husain/" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://wa.me/8801959238319" target="_blank">WhatsApp</a></li>
-                    <li><a href="mailto:husainrashed217@gmail.com">Email</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Shahadat Husain. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Modal -->
     <div class="modal" id="contactModal">
         <div class="modal-content">
-            <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('active')">&times;</button>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
             <h2>Get Your Free Audit</h2>
             <form id="contactForm">
                 <div class="form-message" id="formMessage"></div>
@@ -1187,39 +1377,43 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Biggest Challenge</label>
-                    <textarea name="message" placeholder="What's not working?"></textarea>
+                    <label>What's your biggest challenge?</label>
+                    <textarea name="message" placeholder="Tell me what's not working..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Book Free Audit</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Book My Free Audit</button>
             </form>
         </div>
     </div>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/8801959238319?text=Hi%20Shahadat,%20I%20want%20to%20scale%20my%20business" target="_blank" class="whatsapp-float">💬</a>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/8801959238319?text=Hi%20Shahadat,%20I%20want%20to%20scale%20my%20business" target="_blank" class="whatsapp-float" aria-label="WhatsApp">💬</a>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
+        // EmailJS Init
         emailjs.init('0T7tiDjGh4drTDrew');
 
+        // Slider
         let currentSlide = 0;
         const sliderWrapper = document.getElementById('sliderWrapper');
         const slides = sliderWrapper.querySelectorAll('.slide');
-        const sliderNav = document.getElementById('sliderNav');
+        const sliderControls = document.getElementById('sliderControls');
         
+        // Create dots
         slides.forEach((_, index) => {
-            const dot = document.createElement('div');
+            const dot = document.createElement('button');
             dot.className = 'slider-dot';
+            dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
             if (index === 0) dot.classList.add('active');
             dot.onclick = () => goToSlide(index);
-            sliderNav.appendChild(dot);
+            sliderControls.appendChild(dot);
         });
 
         function updateSlider() {
             sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
             document.querySelectorAll('.slider-dot').forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
-                });
+            });
         }
 
         function nextSlide() {
@@ -1237,22 +1431,31 @@
             updateSlider();
         }
 
+        // Auto-slide
         setInterval(nextSlide, 4000);
 
         // Modal
+        function openModal() {
+            document.getElementById('contactModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         document.querySelectorAll('.open-modal').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.getElementById('contactModal').classList.add('active');
-            });
+            btn.addEventListener('click', openModal);
         });
 
-        document.querySelector('.modal').addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal')) {
-                document.getElementById('contactModal').classList.remove('active');
+        document.getElementById('contactModal').addEventListener('click', (e) => {
+            if (e.target.id === 'contactModal') {
+                closeModal();
             }
         });
 
-        // Form
+        // Form Submit
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const formMessage = document.getElementById('formMessage');
@@ -1263,27 +1466,27 @@
 
             emailjs.sendForm('service_uonopr6', 'template_7zrq0tm', this)
                 .then(() => {
-                    formMessage.textContent = '✓ Booked! Check your email.';
+                    formMessage.textContent = '✓ Booked! Check your email for next steps.';
                     formMessage.className = 'form-message success';
                     formMessage.style.display = 'block';
                     this.reset();
                     setTimeout(() => {
-                        document.getElementById('contactModal').classList.remove('active');
+                        closeModal();
                         formMessage.style.display = 'none';
                     }, 3000);
                 })
                 .catch(() => {
-                    formMessage.textContent = '✗ Failed. Email me directly.';
+                    formMessage.textContent = '✗ Failed to send. Please email me directly.';
                     formMessage.className = 'form-message error';
                     formMessage.style.display = 'block';
                 })
                 .finally(() => {
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Book Free Audit';
+                    submitBtn.textContent = 'Book My Free Audit';
                 });
         });
 
-        // Smooth scroll
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
