@@ -1,1501 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Shahadat Husain | Performance Marketing Expert That Delivers Real ROI</title>
-    <meta name="description" content="Award-winning performance marketer specializing in Meta Ads, Google Ads & conversion optimization. £50k+ ad spend managed with proven results.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            -webkit-text-size-adjust: 100%;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1e293b;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Top Announcement Bar */
-        .announcement-bar {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            text-align: center;
-            padding: 10px 16px;
-            font-weight: 700;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-
-        .announcement-bar span {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 3px 10px;
-            border-radius: 12px;
-            margin-left: 6px;
-            font-size: 12px;
-        }
-
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 16px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 18px;
-            font-weight: 900;
-            color: #0f172a;
-            letter-spacing: -0.5px;
-        }
-
-        .desktop-menu {
-            display: none;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .desktop-menu a {
-            color: #475569;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .desktop-menu a:hover {
-            color: #6366f1;
-        }
-
-        .nav-cta {
-            background: #0f172a;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 13px;
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.3s;
-        }
-
-        .nav-cta:hover {
-            background: #6366f1;
-            transform: translateY(-1px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 48px 20px 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.2);
-            color: #10b981;
-            padding: 6px 12px;
-            border-radius: 16px;
-            font-size: 11px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero h1 {
-            font-size: 32px;
-            font-weight: 900;
-            line-height: 1.15;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 .highlight {
-            color: #10b981;
-            display: block;
-        }
-
-        .hero-description {
-            font-size: 16px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 28px;
-        }
-
-        .hero-ctas {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-
-        .btn {
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 15px;
-            text-align: center;
-            cursor: pointer;
-            border: none;
-            text-decoration: none;
-            display: block;
-            transition: all 0.3s;
-        }
-
-        .btn-primary {
-            background: #10b981;
-            color: white;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.4);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #0f172a;
-        }
-
-        .btn-secondary:hover {
-            background: #f8fafc;
-            transform: translateY(-2px);
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .stat-item {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 16px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .stat-number {
-            font-size: 28px;
-            font-weight: 900;
-            color: #10b981;
-            margin-bottom: 4px;
-            letter-spacing: -1px;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 600;
-        }
-
-        /* Section */
-        .section {
-            padding: 56px 20px;
-        }
-
-        .section-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 800;
-            color: #6366f1;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: 28px;
-            font-weight: 900;
-            color: #0f172a;
-            line-height: 1.2;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-        }
-
-        .section-description {
-            font-size: 16px;
-            color: #64748b;
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        /* Problem Section */
-        .problem-section {
-            background: white;
-        }
-
-        .problem-grid {
-            display: grid;
-            gap: 16px;
-        }
-
-        .problem-card {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            padding: 24px;
-            border-radius: 12px;
-            border-left: 4px solid #ef4444;
-        }
-
-        .problem-card h3 {
-            font-size: 17px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 8px;
-        }
-
-        .problem-card p {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        /* Services Section */
-        .services-section {
-            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
-        }
-
-        .service-grid {
-            display: grid;
-            gap: 20px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 28px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            border-top: 3px solid #6366f1;
-            transition: all 0.3s;
-        }
-
-        .service-card:active {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .service-icon {
-            width: 52px;
-            height: 52px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            margin-bottom: 16px;
-        }
-
-        .service-card h3 {
-            font-size: 18px;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .service-card ul {
-            list-style: none;
-        }
-
-        .service-card li {
-            padding: 6px 0;
-            padding-left: 22px;
-            position: relative;
-            font-size: 13px;
-            color: #475569;
-            line-height: 1.5;
-        }
-
-        .service-card li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        /* Results Section */
-        .results-section {
-            background: #0f172a;
-            color: white;
-        }
-
-        .result-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 28px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .result-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            margin-bottom: 20px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .result-icon {
-            width: 52px;
-            height: 52px;
-            background: linear-gradient(135deg, #10b981, #059669);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            flex-shrink: 0;
-        }
-
-        .result-title h3 {
-            font-size: 19px;
-            font-weight: 900;
-            margin-bottom: 4px;
-        }
-
-        .result-meta {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 600;
-        }
-
-        .result-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .stat-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 14px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 24px;
-            font-weight: 900;
-            color: #10b981;
-            margin-bottom: 2px;
-        }
-
-        .stat-text {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .result-list {
-            list-style: none;
-        }
-
-        .result-list li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .result-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-        }
-
-        /* Process Section */
-        .process-section {
-            background: white;
-        }
-
-        .process-steps {
-            display: grid;
-            gap: 24px;
-        }
-
-        .process-step {
-            background: #f8fafc;
-            padding: 24px;
-            border-radius: 12px;
-            border-left: 4px solid #6366f1;
-        }
-
-        .step-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 12px;
-        }
-
-        .step-number {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 900;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .process-step h3 {
-            font-size: 17px;
-            font-weight: 800;
-            color: #0f172a;
-        }
-
-        .process-step p {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-            padding-left: 58px;
-        }
-
-        /* Portfolio Slider */
-        .portfolio-section {
-            background: #f8fafc;
-        }
-
-        .portfolio-slider {
-            background: #0f172a;
-            border-radius: 16px;
-            padding: 32px 16px;
-            margin-top: 32px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-out;
-        }
-
-        .slide {
-            min-width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 8px;
-        }
-
-        .slide img {
-            max-width: 100%;
-            height: auto;
-            max-height: 320px;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .slider-controls {
-            position: absolute;
-            bottom: 16px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 6px;
-            z-index: 10;
-        }
-
-        .slider-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            padding: 0;
-        }
-
-        .slider-dot.active {
-            width: 24px;
-            border-radius: 4px;
-            background: white;
-        }
-
-        .slider-arrows {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            padding: 0 8px;
-            pointer-events: none;
-        }
-
-        .slider-arrow {
-            pointer-events: all;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: none;
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .slider-arrow:active {
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        /* Guarantee Section */
-        .guarantee-section {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
-            text-align: center;
-        }
-
-        .guarantee-box {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 32px 24px;
-            border-radius: 16px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .guarantee-icon {
-            width: 72px;
-            height: 72px;
-            background: white;
-            color: #10b981;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            margin: 0 auto 16px;
-            font-weight: 900;
-        }
-
-        .guarantee-box h2 {
-            font-size: 24px;
-            font-weight: 900;
-            margin-bottom: 12px;
-        }
-
-        .guarantee-box p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: #0f172a;
-            text-align: center;
-            color: white;
-        }
-
-        .cta-section h2 {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
-        }
-
-        .cta-section p {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background: #020617;
-            padding: 48px 20px 24px;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .footer-content {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .footer-grid {
-            display: grid;
-            gap: 32px;
-            margin-bottom: 32px;
-        }
-
-        .footer-brand h3 {
-            font-size: 18px;
-            font-weight: 900;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .footer-brand p {
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 8px;
-        }
-
-        .footer-section h4 {
-            font-size: 12px;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            font-size: 13px;
-            line-height: 2.2;
-            transition: color 0.2s;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            text-align: center;
-            font-size: 12px;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 2000;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 20px;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            width: 100%;
-            max-width: 500px;
-            border-radius: 16px;
-            padding: 32px 24px;
-            position: relative;
-            margin: auto;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: #f1f5f9;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            color: #64748b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal h2 {
-            font-size: 24px;
-            font-weight: 900;
-            color: #0f172a;
-            margin-bottom: 20px;
-            padding-right: 32px;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 6px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: inherit;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #6366f1;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 90px;
-        }
-
-        .form-message {
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            display: none;
-            font-weight: 600;
-            font-size: 13px;
-        }
-
-        .form-message.success {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .form-message.error {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 54px;
-            height: 54px;
-            background: #25d366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
-            z-index: 1500;
-            text-decoration: none;
-            font-size: 26px;
-            transition: all 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
-        /* Tablet Styles */
-        @media (min-width: 640px) {
-            .announcement-bar {
-                font-size: 14px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero-description {
-                font-size: 18px;
-            }
-
-            .hero-stats {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .stat-number {
-                font-size: 32px;
-            }
-
-            .section-title {
-                font-size: 36px;
-            }
-
-            .problem-grid,
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
-            }
-
-            .slide img {
-                max-height: 420px;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Desktop Styles */
-        @media (min-width: 1024px) {
-            .nav-container {
-                padding: 18px 32px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .desktop-menu {
-                display: flex;
-            }
-
-            .nav-cta {
-                padding: 11px 24px;
-                font-size: 14px;
-            }
-
-            .hero {
-                padding: 80px 32px 100px;
-            }
-
-            .hero h1 {
-                font-size: 56px;
-                max-width: 900px;
-            }
-
-            .hero-description {
-                font-size: 20px;
-                max-width: 700px;
-            }
-
-            .hero-ctas {
-                flex-direction: row;
-                gap: 16px;
-                max-width: 500px;
-            }
-
-            .btn {
-                padding: 16px 36px;
-                font-size: 16px;
-            }
-
-            .section {
-                padding: 80px 32px;
-            }
-
-            .section-title {
-                font-size: 44px;
-            }
-
-            .section-description {
-                font-size: 18px;
-                max-width: 700px;
-            }
-
-            .problem-grid,
-            .service-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 28px;
-            }
-
-            .process-steps {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .portfolio-slider {
-                padding: 60px 48px;
-            }
-
-            .slide img {
-                max-height: 560px;
-            }
-
-            .slider-arrow {
-                width: 44px;
-                height: 44px;
-                font-size: 22px;
-            }
-
-            .guarantee-box {
-                padding: 48px 40px;
-            }
-
-            .guarantee-box h2 {
-                font-size: 32px;
-            }
-
-            .guarantee-box p {
-                font-size: 17px;
-            }
-
-            .cta-section h2 {
-                font-size: 44px;
-            }
-
-            .cta-section p {
-                font-size: 19px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 2fr 1fr 1fr 1fr;
-            }
-
-            .modal-content {
-                padding: 44px 40px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shahadat Husain | Google Ads & Performance Marketing Specialist</title>
+<meta name="description" content="Stop wasting money on ads that don't convert. I help service businesses worldwide fix underperforming Google Ads and turn ad spend into real leads and booked jobs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#6366f1;--indigo-d:#4f46e5;--violet:#8b5cf6;
+  --green:#10b981;--green-d:#059669;
+  --dark:#0f172a;--dark2:#1e293b;--dark3:#080e1c;
+  --card:#1e293b;--card2:#243044;
+  --text:#e2e8f0;--muted:#94a3b8;--border:rgba(255,255,255,0.08);
+  --white:#ffffff;--red:#ef4444;--amber:#f59e0b;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;line-height:1.6;}
+
+/* TOPBAR */
+.topbar{background:linear-gradient(135deg,var(--indigo),var(--violet));text-align:center;padding:10px 20px;font-size:13px;font-weight:700;color:#fff;letter-spacing:.2px;}
+.topbar a{color:#fff;font-weight:900;text-decoration:underline;margin-left:6px;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:999;background:rgba(15,23,42,0.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2.5px;color:var(--white);}
+.logo i{color:var(--indigo);font-style:normal;}
+.nav-links{display:none;gap:28px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{background:linear-gradient(135deg,var(--indigo),var(--violet));color:#fff;padding:10px 22px;border-radius:7px;font-weight:700;font-size:13px;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.nav-cta:hover{opacity:.9;transform:translateY(-1px);}
+@media(min-width:1024px){.nav-links{display:flex;}}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--dark3) 0%,var(--dark) 55%,#0c1528 100%);padding:88px 24px 76px;position:relative;overflow:hidden;}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(99,102,241,.1) 1px,transparent 1px);background-size:30px 30px;pointer-events:none;}
+.hero-blob{position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.13) 0%,transparent 65%);pointer-events:none;}
+.hero-blob2{position:absolute;bottom:-180px;left:-100px;width:450px;height:450px;background:radial-gradient(circle,rgba(16,185,129,.07) 0%,transparent 65%);pointer-events:none;}
+.hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,.13);border:1px solid rgba(16,185,129,.3);color:var(--green);padding:7px 16px;border-radius:100px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:26px;}
+.badge-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.2;}}
+h1.hero-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(58px,10vw,114px);line-height:.88;letter-spacing:.3px;color:var(--white);margin-bottom:30px;}
+h1.hero-h .acc{color:var(--indigo);display:block;}
+h1.hero-h .str{-webkit-text-stroke:2px rgba(255,255,255,.35);color:transparent;display:block;}
+.hero-desc{font-size:18px;color:var(--muted);max-width:580px;line-height:1.8;margin-bottom:38px;}
+.hero-desc strong{color:var(--text);}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px;}
+.btn-p{background:linear-gradient(135deg,var(--indigo),var(--violet));color:#fff;padding:16px 36px;border-radius:8px;font-weight:800;font-size:15px;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s;box-shadow:0 6px 28px rgba(99,102,241,.28);}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(99,102,241,.45);}
+.btn-g{background:transparent;color:var(--white);padding:16px 36px;border-radius:8px;font-weight:700;font-size:15px;border:2px solid rgba(255,255,255,.18);cursor:pointer;text-decoration:none;display:inline-block;transition:all .25s;}
+.btn-g:hover{border-color:rgba(255,255,255,.45);}
+.trust{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:56px;}
+.stars{color:var(--amber);font-size:16px;letter-spacing:2px;}
+.trust-t{font-size:13px;color:var(--muted);font-weight:600;}
+.divider{width:1px;height:18px;background:var(--border);}
+.hstats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+@media(min-width:600px){.hstats{grid-template-columns:repeat(4,1fr);}}
+.hstat{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:20px 16px;position:relative;overflow:hidden;}
+.hstat::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--indigo),var(--violet));}
+.hn{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--indigo);letter-spacing:1px;}
+.hl2{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:4px;}
+
+/* MARQUEE */
+.marquee{background:linear-gradient(135deg,var(--indigo),var(--violet));padding:13px 0;overflow:hidden;}
+.mq{display:flex;animation:mq 26s linear infinite;white-space:nowrap;}
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.mqi{display:inline-flex;align-items:center;padding:0 26px;font-family:'Bebas Neue',sans-serif;font-size:17px;color:rgba(255,255,255,.9);letter-spacing:1px;gap:10px;}
+.mqi::after{content:'✦';font-size:9px;color:rgba(255,255,255,.35);}
+
+/* SECTIONS */
+.sec{padding:88px 24px;}
+.si{max-width:1240px;margin:0 auto;}
+.stag{font-size:11px;font-weight:800;color:var(--indigo);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.stag::before{content:'';width:20px;height:1px;background:var(--indigo);}
+.sh{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);line-height:1;color:var(--white);margin-bottom:14px;}
+.sd{font-size:17px;color:var(--muted);max-width:560px;line-height:1.75;}
+
+/* PROBLEM */
+.problem{background:var(--dark2);}
+.letter{font-size:17px;color:var(--muted);line-height:2;max-width:740px;margin-bottom:48px;}
+.letter p{margin-bottom:18px;}
+.letter strong{color:var(--text);font-weight:800;}
+.letter .hl{color:var(--indigo);font-weight:700;}
+.probg{display:grid;gap:16px;grid-template-columns:1fr;}
+@media(min-width:640px){.probg{grid-template-columns:repeat(3,1fr);}}
+.probc{background:var(--dark);border:1px solid rgba(239,68,68,.15);border-radius:12px;padding:28px;position:relative;overflow:hidden;}
+.probc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);}
+.probc-ico{font-size:28px;margin-bottom:14px;}
+.probc h3{font-size:17px;font-weight:800;color:var(--white);margin-bottom:10px;}
+.probc p{font-size:14px;color:var(--muted);line-height:1.7;}
+
+/* SERVICES */
+.services{background:var(--dark3);}
+.svcg{display:grid;gap:20px;grid-template-columns:1fr;margin-top:48px;}
+@media(min-width:640px){.svcg{grid-template-columns:repeat(3,1fr);}}
+.svcc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px;transition:all .3s;position:relative;overflow:hidden;}
+.svcc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(99,102,241,.06),transparent);opacity:0;transition:opacity .3s;}
+.svcc:hover{border-color:rgba(99,102,241,.3);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.35);}
+.svcc:hover::before{opacity:1;}
+.svci{width:54px;height:54px;background:linear-gradient(135deg,var(--indigo),var(--violet));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px;}
+.svcc h3{font-size:19px;font-weight:800;color:var(--white);margin-bottom:10px;}
+.svcc p{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:18px;}
+.svcl{list-style:none;}
+.svcl li{padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text);display:flex;align-items:center;gap:8px;}
+.svcl li:last-child{border:none;}
+.svcl li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;}
+
+/* RESULTS */
+.results{background:var(--dark);}
+.resg{display:grid;gap:20px;grid-template-columns:1fr;margin-top:48px;}
+@media(min-width:768px){.resg{grid-template-columns:repeat(2,1fr);}}
+.resc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px;position:relative;overflow:hidden;}
+.resc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--indigo),var(--violet));}
+.res-tag{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;}
+.resc h3{font-size:21px;font-weight:800;color:var(--white);margin-bottom:20px;}
+.resnums{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px;}
+.rn{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.18);border-radius:10px;padding:16px;text-align:center;}
+.rnv{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--green);letter-spacing:1px;}
+.rnl{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+.resl{list-style:none;}
+.resl li{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);display:flex;gap:10px;line-height:1.5;}
+.resl li:last-child{border:none;}
+.resl li::before{content:'→';color:var(--indigo);font-weight:700;flex-shrink:0;}
+
+/* PROCESS */
+.process{background:var(--dark2);}
+.procg{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:48px;}
+@media(min-width:768px){.procg{grid-template-columns:repeat(4,1fr);}}
+.procs{background:var(--card);padding:36px 28px;position:relative;}
+.procbg{font-family:'Bebas Neue',sans-serif;font-size:96px;color:rgba(99,102,241,.05);position:absolute;top:8px;right:12px;line-height:1;pointer-events:none;}
+.procn{width:42px;height:42px;background:linear-gradient(135deg,var(--indigo),var(--violet));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;margin-bottom:18px;}
+.procs h3{font-size:17px;font-weight:800;color:var(--white);margin-bottom:10px;}
+.procs p{font-size:14px;color:var(--muted);line-height:1.75;}
+
+/* PORTFOLIO */
+.portfolio{background:var(--dark3);}
+.slider-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:48px;}
+.slider-top{padding:18px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.slider-lbl{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.3px;}
+.sarrows{display:flex;gap:8px;}
+.sarr{width:36px;height:36px;border-radius:7px;border:1px solid var(--border);background:var(--card2);color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;line-height:1;}
+.sarr:hover{background:var(--indigo);border-color:var(--indigo);color:#fff;}
+.slides-clip{overflow:hidden;}
+.slides-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
+.slide{min-width:100%;display:flex;align-items:center;justify-content:center;padding:32px 24px;background:var(--dark3);min-height:300px;}
+.slide img{max-width:100%;max-height:460px;object-fit:contain;border-radius:8px;display:block;transition:opacity .4s;}
+.no-img{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--muted);text-align:center;}
+.no-img .ic{font-size:48px;}
+.no-img p{font-size:14px;line-height:1.6;}
+.sdots{display:flex;gap:6px;justify-content:center;padding:18px;}
+.sdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12);border:none;cursor:pointer;padding:0;transition:all .3s;}
+.sdot.on{width:26px;border-radius:4px;background:var(--indigo);}
+
+/* GUARANTEE */
+.guarantee{background:var(--dark);padding:88px 24px;}
+.gbox{max-width:860px;margin:0 auto;background:linear-gradient(135deg,rgba(16,185,129,.07),rgba(99,102,241,.05));border:1px solid rgba(16,185,129,.2);border-radius:18px;padding:56px 40px;text-align:center;position:relative;overflow:hidden;}
+.gbox::before{content:'✓';font-family:'Bebas Neue',sans-serif;font-size:300px;color:rgba(16,185,129,.025);position:absolute;top:-60px;right:-20px;line-height:1;pointer-events:none;}
+.gchip{display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:var(--green);padding:8px 18px;border-radius:100px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:20px;}
+.gbox h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,6vw,72px);color:var(--white);letter-spacing:.5px;margin-bottom:16px;line-height:1;}
+.gbox>p{font-size:17px;color:var(--muted);max-width:560px;margin:0 auto 32px;line-height:1.8;}
+.gitems{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px;}
+@media(min-width:600px){.gitems{grid-template-columns:repeat(4,1fr);}}
+.gi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 14px;text-align:center;}
+.gi-ico{font-size:26px;margin-bottom:8px;}
+.gi strong{display:block;font-size:13px;color:var(--text);font-weight:700;margin-bottom:4px;}
+.gi p{font-size:12px;color:var(--muted);}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--dark2);padding:88px 24px;}
+.testig{display:grid;gap:18px;grid-template-columns:1fr;margin-top:48px;}
+@media(min-width:640px){.testig{grid-template-columns:repeat(3,1fr);}}
+.tc{background:var(--dark);border:1px solid var(--border);border-radius:14px;padding:28px;}
+.tc-stars{color:var(--amber);font-size:13px;letter-spacing:2px;margin-bottom:14px;}
+.tc-text{font-size:15px;color:var(--text);line-height:1.75;font-style:italic;margin-bottom:20px;}
+.tc-auth{display:flex;align-items:center;gap:12px;border-top:1px solid var(--border);padding-top:16px;}
+.tc-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--violet));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:16px;flex-shrink:0;}
+.tc-name{font-weight:800;font-size:14px;color:var(--white);}
+.tc-role{font-size:12px;color:var(--muted);}
+
+/* CTA */
+.cta{background:linear-gradient(160deg,var(--dark3),var(--dark) 55%);padding:100px 24px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(99,102,241,.1) 0%,transparent 65%);pointer-events:none;}
+.cta-in{max-width:660px;margin:0 auto;position:relative;}
+.cta-tag{font-size:11px;font-weight:800;color:var(--indigo);text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;}
+.cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,96px);color:var(--white);line-height:.92;margin-bottom:20px;letter-spacing:.3px;}
+.cta h2 em{color:var(--indigo);font-style:normal;}
+.cta>div p{font-size:18px;color:var(--muted);margin-bottom:36px;line-height:1.75;}
+.cta-note{font-size:13px;color:var(--muted);margin-top:14px;}
+.cta-note strong{color:var(--green);}
+
+/* FOOTER */
+footer{background:#040c1a;border-top:1px solid var(--border);padding:60px 24px 30px;}
+.fw{max-width:1240px;margin:0 auto;}
+.fg{display:grid;gap:40px;margin-bottom:48px;grid-template-columns:1fr;}
+@media(min-width:768px){.fg{grid-template-columns:2fr 1fr 1fr 1fr;}}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2.5px;color:var(--white);display:block;margin-bottom:12px;}
+.flogo i{color:var(--indigo);font-style:normal;}
+.fdesc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:6px;}
+.femail{color:var(--indigo);text-decoration:none;font-weight:700;font-size:14px;}
+.fsec h4{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;}
+.fsec ul{list-style:none;}
+.fsec li{margin-bottom:10px;}
+.fsec a{color:var(--muted);text-decoration:none;font-size:14px;transition:color .2s;}
+.fsec a:hover{color:var(--white);}
+.fbot{border-top:1px solid var(--border);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.fbot p{font-size:12px;color:var(--muted);}
+
+/* MODAL */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:9000;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;}
+.modal.open{display:flex;}
+.mbox{background:var(--card);border:1px solid var(--border);border-radius:16px;width:100%;max-width:500px;padding:38px 30px;position:relative;margin:auto;}
+.mclose{position:absolute;top:14px;right:14px;background:var(--card2);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;}
+.mclose:hover{color:var(--white);}
+.mtag{font-size:11px;font-weight:800;color:var(--indigo);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;}
+.mbox h2{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--white);margin-bottom:22px;letter-spacing:.5px;line-height:1.1;}
+.fr{margin-bottom:14px;}
+.fr label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+.fr input,.fr select,.fr textarea{width:100%;background:var(--dark2);border:1px solid var(--border);border-radius:7px;padding:12px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;transition:border-color .2s;-webkit-appearance:none;appearance:none;}
+.fr input:focus,.fr select:focus,.fr textarea:focus{outline:none;border-color:var(--indigo);}
+.fr select option{background:var(--dark2);}
+.fr textarea{resize:vertical;min-height:78px;}
+.fmsg{padding:12px 14px;border-radius:7px;font-size:13px;font-weight:700;display:none;margin-bottom:14px;}
+.fmsg.ok{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:var(--green);}
+.fmsg.err{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:var(--red);}
+.wa{position:fixed;bottom:22px;right:22px;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:25px;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,.4);z-index:4999;transition:transform .3s;}
+.wa:hover{transform:scale(1.1);}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease;}
+.rv.in{opacity:1;transform:translateY(0);}
+@media(max-width:600px){.hero{padding:60px 20px 52px;}.sec{padding:60px 20px;}.gbox{padding:36px 20px;}.mbox{padding:28px 20px;}}
+</style>
 </head>
 <body>
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        🔥 Limited: Only 3 Client Spots Left This Month <span>BOOK NOW</span>
+
+<div class="topbar">⚡ Limited spots available for Q2 2026 — <a href="#" onclick="openModal();return false;">Claim Your Free Audit →</a></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">SHAHADAT<i>.</i></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+    </ul>
+    <button class="nav-cta open-modal">Free Ads Audit →</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-dots"></div><div class="hero-blob"></div><div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div class="badge"><span class="badge-dot"></span>Performance Marketing Specialist · Worldwide</div>
+    <h1 class="hero-h">STOP WASTING<br><span class="acc">MONEY ON ADS</span><span class="str">THAT DON'T WORK.</span></h1>
+    <p class="hero-desc">I help service businesses worldwide fix underperforming Google Ads, eliminate budget waste, and turn every pound of ad spend into <strong>real leads and booked jobs.</strong></p>
+    <div class="btn-row">
+      <button class="btn-p open-modal">Get Your Free Waste Audit →</button>
+      <a href="#results" class="btn-g">See Real Results</a>
     </div>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">SHAHADAT HUSAIN</div>
-            <ul class="desktop-menu">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#work">Work</a></li>
-            </ul>
-            <button class="nav-cta open-modal">Free Audit</button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">✓ Performance Marketing Expert</div>
-            <h1>Stop Wasting Money On Ads That <span class="highlight">Don't Convert</span></h1>
-            <p class="hero-description">I help businesses generate £100k+/month with Meta Ads, Google Ads & conversion systems that turn ad spend into predictable, scalable profit.</p>
-            <div class="hero-ctas">
-                <button class="btn btn-primary open-modal">Get Free Strategy Call</button>
-                <a href="#results" class="btn btn-secondary">See Real Results</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">£50k+</div>
-                    <div class="stat-label">Ad Spend Managed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">3.5x</div>
-                    <div class="stat-label">Average ROAS</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">40%</div>
-                    <div class="stat-label">Order Increase</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">35%</div>
-                    <div class="stat-label">Higher Conversions</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="section problem-section">
-        <div class="section-inner">
-            <div class="section-label">THE PROBLEM</div>
-            <h2 class="section-title">Your Current Agency Is Burning Your Money</h2>
-            <p class="section-description">Here's the brutal truth about why your ads aren't working...</p>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <h3>❌ Clicks Without Customers</h3>
-                    <p>They celebrate high CTRs while your bank account stays empty. Traffic means nothing without sales.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>❌ Zero Accountability</h3>
-                    <p>Vague reports, missing data, and excuses. You don't know if your money is working or being wasted.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>❌ Generic Strategies</h3>
-                    <p>Same tired playbook for every client. Your business deserves custom solutions, not templates.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section services-section">
-        <div class="section-inner">
-            <div class="section-label">THE SOLUTION</div>
-            <h2 class="section-title">How I Actually Grow Your Business</h2>
-            <p class="section-description">Performance marketing focused on one thing: Making you more money than you spend.</p>
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Meta Ads That Convert</h3>
-                    <p>Stop burning cash on Facebook & Instagram ads. I build campaigns that turn scrollers into buyers.</p>
-                    <ul>
-                        <li>Custom audience targeting</li>
-                        <li>High-converting creatives</li>
-                        <li>Conversion API setup</li>
-                        <li>A/B testing & scaling</li>
-                        <li>Retargeting campaigns</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Google Ads That Scale</h3>
-                    <p>Capture buyers when they're actively searching. Optimized for maximum profit, not vanity metrics.</p>
-                    <ul>
-                        <li>Search campaigns</li>
-                        <li>Shopping ads for e-commerce</li>
-                        <li>Display remarketing</li>
-                        <li>YouTube video ads</li>
-                        <li>Local Service Ads</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3>Conversion Optimization</h3>
-                    <p>More traffic won't fix a broken funnel. I find and eliminate what's stopping visitors from buying.</p>
-                    <ul>
-                        <li>Landing page optimization</li>
-                        <li>GA4 & GTM implementation</li>
-                        <li>Funnel analysis & CRO</li>
-                        <li>User behavior tracking</li>
-                        <li>Checkout flow fixes</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section id="results" class="section results-section">
-        <div class="section-inner">
-            <div class="section-label" style="color: #10b981;">PROVEN RESULTS</div>
-            <h2 class="section-title" style="color: white;">Real Businesses. Real Growth. Real ROI.</h2>
-            <p class="section-description" style="color: rgba(255,255,255,0.8);">Here's what happens when you stop guessing and start executing with data.</p>
-            
-            <div class="result-card">
-                <div class="result-header">
-                    <div class="result-icon">🧸</div>
-                    <div class="result-title">
-                        <h3>Baby Toy E-commerce</h3>
-                        <div class="result-meta">Bangladesh • Meta Ads Campaign</div>
-                    </div>
-                </div>
-                <div class="result-stats">
-                    <div class="stat-box">
-                        <div class="stat-value">287%</div>
-                        <div class="stat-text">ROAS Increase</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">£48k</div>
-                        <div class="stat-text">Revenue Generated</div>
-                    </div>
-                </div>
-                <ul class="result-list">
-                    <li>Built custom audiences targeting new parents</li>
-                    <li>Created emotion-driven ad creatives focusing on child safety</li>
-                    <li>Implemented Conversion API for accurate tracking</li>
-                    <li>Scaled from £500/day to £2k/day profitably</li>
-                </ul>
-            </div>
-
-            <div class="result-card">
-                <div class="result-header">
-                    <div class="result-icon">💼</div>
-                    <div class="result-title">
-                        <h3>B2B Lead Generation</h3>
-                        <div class="result-meta">SaaS Company • Google Ads</div>
-                    </div>
-                </div>
-                <div class="result-stats">
-                    <div class="stat-box">
-                        <div class="stat-value">-50%</div>
-                        <div class="stat-text">Cost Per Lead</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-value">183</div>
-                        <div class="stat-text">Qualified Leads</div>
-                    </div>
-                </div>
-                <ul class="result-list">
-                    <li>Reduced CPL from $8.42 to $4.31 in 60 days</li>
-                    <li>Rebuilt targeting for C-level decision makers</li>
-                    <li>Created high-converting landing pages (32% CR)</li>
-                    <li>Implemented multi-touch attribution system</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" class="section process-section">
-        <div class="section-inner">
-            <div class="section-label">MY PROCESS</div>
-            <h2 class="section-title">Exactly How I Scale Your Revenue</h2>
-            <p class="section-description">No secrets. Here's my exact 4-step system for delivering results.</p>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-header">
-                        <div class="step-number">1</div>
-                        <h3>Deep Audit</h3>
-                    </div>
-                    <p>Analyze your campaigns, find leaks, uncover hidden opportunities most agencies miss.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-header">
-                        <div class="step-number">2</div>
-                        <h3>Custom Strategy</h3>
-                    </div>
-                    <p>Build a data-backed plan specifically for your business, market, and goals.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-header">
-                        <div class="step-number">3</div>
-                        <h3>Execute & Test</h3>
-                    </div>
-                    <p>Launch campaigns, track metrics, optimize based on real performance data.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-header">
-                        <div class="step-number">4</div>
-                        <h3>Scale Profit</h3>
-                    </div>
-                    <p>Once profitable, scale aggressively while maintaining conversion rates.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="work" class="section portfolio-section">
-        <div class="section-inner">
-            <div class="section-label">PROOF</div>
-            <h2 class="section-title">Real Campaign Dashboards</h2>
-            <p class="section-description">Actual screenshots from campaigns I've managed. Not stock photos.</p>
-            
-            <div class="portfolio-slider">
-                <div class="slider-arrows">
-                    <button class="slider-arrow" onclick="previousSlide()" aria-label="Previous">‹</button>
-                    <button class="slider-arrow" onclick="nextSlide()" aria-label="Next">›</button>
-                </div>
-                
-                <div class="slider-wrapper" id="sliderWrapper">
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_13_pjtwt6.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_19_kkxeia.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_18_v2txcv.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_14_uv3woa.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_17_jntgxl.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_15_fuynrp.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_11_tk0ccq.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078920/Md_Shahadat_Work_16_etbxsn.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_10_hzmspo.jpg" alt="Campaign Result" loading="lazy"></div>
-                    <div class="slide"><img src="https://res.cloudinary.com/dtemdx9l8/image/upload/f_auto,q_auto/v1771078919/Md_Shahadat_Work_12_n5vuys.jpg" alt="Campaign Result" loading="lazy"></div>
-                </div>
-                
-                <div class="slider-controls" id="sliderControls"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guarantee Section -->
-    <section class="section guarantee-section">
-        <div class="section-inner">
-            <div class="guarantee-box">
-                <div class="guarantee-icon">✓</div>
-                <h2>90-Day Results Guarantee</h2>
-                <p>If I don't improve your conversion rate or lower your cost per acquisition within 90 days, you get 100% of your money back. No questions asked. That's how confident I am.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-        <div class="section-inner">
-            <h2>Ready To Stop Wasting Money?</h2>
-            <p>Book a free 30-minute strategy call. I'll audit your campaigns and show you exactly what's broken (and how to fix it).</p>
-            <button class="btn btn-primary open-modal">Get Your Free Audit Now</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>Shahadat Husain</h3>
-                    <p>Performance marketing expert helping businesses scale with Meta Ads, Google Ads & conversion optimization.</p>
-                    <p>📍 Sylhet, Bangladesh</p>
-                    <p>📧 husainrashed217@gmail.com</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Meta Ads</a></li>
-                        <li><a href="#services">Google Ads</a></li>
-                        <li><a href="#services">CRO</a></li>
-                        <li><a href="#services">Analytics</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#results">Results</a></li>
-                        <li><a href="#work">Portfolio</a></li>
-                        <li><a href="#process">Process</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/md-shahadat-husain/" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://wa.me/8801959238319" target="_blank">WhatsApp</a></li>
-                        <li><a href="mailto:husainrashed217@gmail.com">Email</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Shahadat Husain. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modal -->
-    <div class="modal" id="contactModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <h2>Get Your Free Audit</h2>
-            <form id="contactForm">
-                <div class="form-message" id="formMessage"></div>
-                <div class="form-group">
-                    <label>Name *</label>
-                    <input type="text" name="from_name" required placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label>Email *</label>
-                    <input type="email" name="from_email" required placeholder="your@email.com">
-                </div>
-                <div class="form-group">
-                    <label>Phone *</label>
-                    <input type="tel" name="phone" required placeholder="+1 234 567 8900">
-                </div>
-                <div class="form-group">
-                    <label>Business Name *</label>
-                    <input type="text" name="business_name" required placeholder="Your Company">
-                </div>
-                <div class="form-group">
-                    <label>Monthly Ad Budget *</label>
-                    <select name="ad_budget" required>
-                        <option value="">Select budget</option>
-                        <option value="Under $1,000">Under $1,000</option>
-                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
-                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                        <option value="$10,000+">$10,000+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>What's your biggest challenge?</label>
-                    <textarea name="message" placeholder="Tell me what's not working..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Book My Free Audit</button>
-            </form>
-        </div>
+    <div class="trust">
+      <div class="stars">★★★★★</div>
+      <div class="trust-t">Trusted by service businesses globally</div>
+      <div class="divider"></div>
+      <div class="trust-t">🇬🇧 UK &nbsp;·&nbsp; 🇮🇪 Ireland &nbsp;·&nbsp; 🇦🇺 Australia &nbsp;·&nbsp; 🇨🇦 Canada</div>
     </div>
+    <div class="hstats rv">
+      <div class="hstat"><div class="hn">£50k+</div><div class="hl2">Ad Spend Managed</div></div>
+      <div class="hstat"><div class="hn">3.5x</div><div class="hl2">Average ROAS</div></div>
+      <div class="hstat"><div class="hn">-40%</div><div class="hl2">Avg Cost Per Lead Drop</div></div>
+      <div class="hstat"><div class="hn">6yrs+</div><div class="hl2">Specialist Experience</div></div>
+    </div>
+  </div>
+</section>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/8801959238319?text=Hi%20Shahadat,%20I%20want%20to%20scale%20my%20business" target="_blank" class="whatsapp-float" aria-label="WhatsApp">💬</a>
+<div class="marquee"><div class="mq">
+  <span class="mqi">Google Ads Management</span><span class="mqi">Lead Generation</span><span class="mqi">Conversion Tracking</span><span class="mqi">Landing Page CRO</span><span class="mqi">Meta Ads</span><span class="mqi">GA4 &amp; GTM Setup</span><span class="mqi">Quality Score Fixes</span><span class="mqi">Local SEO</span>
+  <span class="mqi">Google Ads Management</span><span class="mqi">Lead Generation</span><span class="mqi">Conversion Tracking</span><span class="mqi">Landing Page CRO</span><span class="mqi">Meta Ads</span><span class="mqi">GA4 &amp; GTM Setup</span><span class="mqi">Quality Score Fixes</span><span class="mqi">Local SEO</span>
+</div></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        // EmailJS Init
-        emailjs.init('0T7tiDjGh4drTDrew');
+<section class="sec problem" id="problem">
+  <div class="si">
+    <div class="stag rv">The Brutal Truth</div>
+    <h2 class="sh rv">Your Ads Are Running.<br>Your Phone Isn't Ringing.</h2>
+    <div class="letter rv">
+      <p>I'll be completely straight with you.</p>
+      <p>Most service businesses running Google Ads are <strong>silently wasting £300–£800 every single month.</strong> Not because Google Ads doesn't work — it absolutely does. But because the setup is broken in ways you can't see from inside your own account.</p>
+      <p>Ads sending traffic to your homepage instead of a page built to convert. <span class="hl">No conversion tracking</span>, so Google's algorithm is optimising for nothing. Ad copy identical to every other business on the page. Extensions half-set-up or missing entirely.</p>
+      <p>The result? You pay more per click. You get fewer leads. Your competitors — who fixed exactly these things — are fully booked while you watch your budget drain away.</p>
+      <p><strong>That's the problem. I find it. I fix it. I show you the results.</strong></p>
+    </div>
+    <div class="probg">
+      <div class="probc rv"><div class="probc-ico">🔥</div><h3>❌ Clicks Without Calls</h3><p>Your homepage was never built to convert ad traffic. Visitors land, see nothing relevant, and leave — and you paid for that click.</p></div>
+      <div class="probc rv"><div class="probc-ico">🕳️</div><h3>❌ Bidding Completely Blind</h3><p>Without conversion tracking, Google doesn't know what a real lead looks like for your business. It optimises for nothing.</p></div>
+      <div class="probc rv"><div class="probc-ico">📉</div><h3>❌ Competitors Are Winning</h3><p>Someone in your area has smarter copy, a faster landing page, and proper tracking setup — and they're taking every job you should be getting.</p></div>
+    </div>
+  </div>
+</section>
 
-        // Slider
-        let currentSlide = 0;
-        const sliderWrapper = document.getElementById('sliderWrapper');
-        const slides = sliderWrapper.querySelectorAll('.slide');
-        const sliderControls = document.getElementById('sliderControls');
-        
-        // Create dots
-        slides.forEach((_, index) => {
-            const dot = document.createElement('button');
-            dot.className = 'slider-dot';
-            dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
-            if (index === 0) dot.classList.add('active');
-            dot.onclick = () => goToSlide(index);
-            sliderControls.appendChild(dot);
-        });
+<section class="sec services" id="services">
+  <div class="si">
+    <div class="stag rv">What I Do</div>
+    <h2 class="sh rv">Performance Marketing<br>That Actually Performs</h2>
+    <p class="sd rv">One obsession — making you more money than you spend. Not vanity metrics. Not agency-speak. Real leads, real jobs, measurable ROI.</p>
+    <div class="svcg">
+      <div class="svcc rv">
+        <div class="svci">🎯</div>
+        <h3>Google Ads Management</h3>
+        <p>Full campaign management built for service businesses. Set up correctly, optimised weekly, and scaled when profitable.</p>
+        <ul class="svcl"><li>Search &amp; Local Service Ads</li><li>Ad copy that converts</li><li>Complete extensions setup</li><li>Negative keyword management</li><li>Smart bid strategy</li><li>Weekly plain-English reports</li></ul>
+      </div>
+      <div class="svcc rv">
+        <div class="svci">📱</div>
+        <h3>Meta Ads That Convert</h3>
+        <p>Stop burning cash on Facebook &amp; Instagram ads that don't deliver. I build campaigns that turn scrollers into paying customers.</p>
+        <ul class="svcl"><li>Custom audience targeting</li><li>High-converting creatives</li><li>Conversion API (CAPI) setup</li><li>A/B testing &amp; scaling</li><li>Retargeting campaigns</li><li>Full funnel strategy</li></ul>
+      </div>
+      <div class="svcc rv">
+        <div class="svci">⚡</div>
+        <h3>Tracking &amp; CRO</h3>
+        <p>If you can't measure it, you can't improve it. Bulletproof tracking setup and landing pages that turn clicks into calls.</p>
+        <ul class="svcl"><li>GA4 &amp; GTM implementation</li><li>Call &amp; form tracking</li><li>Landing page message match</li><li>Mobile speed improvements</li><li>A/B testing</li><li>Heatmap &amp; behaviour analysis</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function updateSlider() {
-            sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-            document.querySelectorAll('.slider-dot').forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
-            });
-        }
+<section class="sec results" id="results">
+  <div class="si">
+    <div class="stag rv">Proven Results</div>
+    <h2 class="sh rv">Real Campaigns.<br>Real Numbers.</h2>
+    <p class="sd rv">Not projections. Not estimates. Actual performance numbers from campaigns I've personally built and managed.</p>
+    <div class="resg">
+      <div class="resc rv">
+        <div class="res-tag">E-commerce · Meta Ads Campaign</div>
+        <h3>Product Brand Scaling</h3>
+        <div class="resnums"><div class="rn"><div class="rnv">287%</div><div class="rnl">ROAS Increase</div></div><div class="rn"><div class="rnv">£48k</div><div class="rnl">Revenue Generated</div></div></div>
+        <ul class="resl">
+          <li>Built custom audiences &amp; emotion-driven ad creatives from scratch</li>
+          <li>Implemented Meta Conversion API for pixel-accurate tracking</li>
+          <li>Scaled daily budget from £500 to £2,000 profitably</li>
+          <li>Cut cost per purchase by 44% over 60 days</li>
+        </ul>
+      </div>
+      <div class="resc rv">
+        <div class="res-tag">B2B Lead Generation · Google Ads</div>
+        <h3>SaaS Campaign Rebuild</h3>
+        <div class="resnums"><div class="rn"><div class="rnv">-50%</div><div class="rnl">Cost Per Lead</div></div><div class="rn"><div class="rnv">183</div><div class="rnl">Qualified Leads</div></div></div>
+        <ul class="resl">
+          <li>Rebuilt targeting to reach decision-makers, not casual browsers</li>
+          <li>Cut CPL from £8.42 down to £4.31 within 60 days</li>
+          <li>Dedicated landing pages achieving 32% conversion rate</li>
+          <li>Full multi-touch attribution system implemented</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlider();
-        }
+<section class="sec process" id="process">
+  <div class="si">
+    <div class="stag rv">How It Works</div>
+    <h2 class="sh rv">Simple. Transparent.<br>Zero Guesswork.</h2>
+    <p class="sd rv">No mystery. Here's exactly what happens — from your first free audit call to measurable, consistent results.</p>
+    <div class="procg rv">
+      <div class="procs"><div class="procbg">01</div><div class="procn">1</div><h3>Free Waste Audit</h3><p>I analyse your live ads, landing pages, and tracking from the outside — and show you exactly where budget is being wasted.</p></div>
+      <div class="procs"><div class="procbg">02</div><div class="procn">2</div><h3>Strategy Call</h3><p>A free 15-minute call walking through the audit. No pitch — just honest findings and whether I can genuinely help your business.</p></div>
+      <div class="procs"><div class="procbg">03</div><div class="procn">3</div><h3>Fix &amp; Launch</h3><p>I rebuild what's broken in week one — copy, tracking, landing page fixes, and bid strategy all done right from day one.</p></div>
+      <div class="procs"><div class="procbg">04</div><div class="procn">4</div><h3>Scale &amp; Report</h3><p>Weekly plain-English reports. More leads at lower cost. We scale what works and cut what doesn't — every single week.</p></div>
+    </div>
+  </div>
+</section>
 
-        function previousSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateSlider();
-        }
+<section class="sec portfolio" id="portfolio">
+  <div class="si">
+    <div class="stag rv">Real Proof</div>
+    <h2 class="sh rv">Campaign Dashboards.<br>Not Stock Photos.</h2>
+    <p class="sd rv">Actual screenshots from campaigns I've personally managed. Every metric you see is real.</p>
+    <div class="slider-wrap rv">
+      <div class="slider-top">
+        <span class="slider-lbl">Campaign Results &amp; Dashboards</span>
+        <div class="sarrows"><button class="sarr" id="prevBtn">&#8249;</button><button class="sarr" id="nextBtn">&#8250;</button></div>
+      </div>
+      <div class="slides-clip"><div class="slides-track" id="slidesTrack"></div></div>
+      <div class="sdots" id="sdots"></div>
+    </div>
+  </div>
+</section>
 
-        function goToSlide(index) {
-            currentSlide = index;
-            updateSlider();
-        }
+<section class="testimonials">
+  <div class="si">
+    <div class="stag rv">Client Feedback</div>
+    <h2 class="sh rv">What Clients Say.</h2>
+    <div class="testig">
+      <div class="tc rv"><div class="tc-stars">★★★★★</div><p class="tc-text">"Within 3 weeks of Shahadat fixing our Google Ads, the phone was ringing every day. We'd been wasting money for months. Wish we'd found him sooner."</p><div class="tc-auth"><div class="tc-av">J</div><div><div class="tc-name">James H.</div><div class="tc-role">Emergency Plumber · London</div></div></div></div>
+      <div class="tc rv"><div class="tc-stars">★★★★★</div><p class="tc-text">"He found we were sending all traffic to our homepage. No wonder we had zero leads! Fixed in a week — cost per lead dropped by more than half straight away."</p><div class="tc-auth"><div class="tc-av">S</div><div><div class="tc-name">Sarah M.</div><div class="tc-role">Cleaning Company · Manchester</div></div></div></div>
+      <div class="tc rv"><div class="tc-stars">★★★★★</div><p class="tc-text">"Clear communication, honest advice, real results. Our cost per quote went from £38 down to £14 in the first month. Genuinely impressive work."</p><div class="tc-auth"><div class="tc-av">D</div><div><div class="tc-name">Derek O.</div><div class="tc-role">Roofing Company · Dublin</div></div></div></div>
+    </div>
+  </div>
+</section>
 
-        // Auto-slide
-        setInterval(nextSlide, 4000);
+<section class="guarantee">
+  <div class="si">
+    <div class="gbox rv">
+      <div class="gchip">✓ Zero-Risk Guarantee</div>
+      <h2>90-Day Results<br>Or You Don't Pay.</h2>
+      <p>If I don't measurably improve your Google Ads performance within 90 days — lower cost per lead, more conversions, better Quality Scores — you get a full refund. No questions asked.</p>
+      <button class="btn-p open-modal" style="font-size:16px;padding:16px 40px;">Claim Your Free Audit Now →</button>
+      <div class="gitems">
+        <div class="gi"><div class="gi-ico">🔒</div><strong>No Long Contracts</strong><p>Month-to-month. Leave anytime.</p></div>
+        <div class="gi"><div class="gi-ico">📞</div><strong>Free 15-Min Call</strong><p>No pitch. Just honest findings.</p></div>
+        <div class="gi"><div class="gi-ico">💰</div><strong>You Own Everything</strong><p>Your account, your data, always.</p></div>
+        <div class="gi"><div class="gi-ico">📊</div><strong>Weekly Reports</strong><p>Plain English, no agency jargon.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Modal
-        function openModal() {
-            document.getElementById('contactModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+<section class="cta">
+  <div class="cta-in">
+    <div class="cta-tag">// Limited Availability</div>
+    <h2>STOP <em>WASTING</em><br>MONEY TODAY.</h2>
+    <div>
+      <p>Book your free 15-minute audit call. I'll review your Google Ads live and show you exactly what's leaking — completely free, zero obligation.</p>
+      <button class="btn-p open-modal" style="font-size:17px;padding:17px 44px;">Get Your Free Waste Audit →</button>
+      <div class="cta-note">15 minutes. <strong>Completely free.</strong> No credit card. No commitment.</div>
+    </div>
+  </div>
+</section>
 
-        function closeModal() {
-            document.getElementById('contactModal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
+<footer>
+  <div class="fw">
+    <div class="fg">
+      <div>
+        <span class="flogo">SHAHADAT<i>.</i></span>
+        <p class="fdesc">Performance Marketing Specialist helping service businesses worldwide stop wasting ad spend and start generating measurable results.</p>
+        <p class="fdesc">📍 Working with clients in UK, Ireland, Australia, Canada &amp; worldwide.</p>
+        <a href="mailto:shahadatdigitalmarketer@gmail.com" class="femail">shahadatdigitalmarketer@gmail.com</a>
+      </div>
+      <div class="fsec"><h4>Services</h4><ul><li><a href="#services">Google Ads</a></li><li><a href="#services">Meta Ads</a></li><li><a href="#services">Tracking &amp; CRO</a></li><li><a href="#services">Landing Pages</a></li><li><a href="#services">Local SEO</a></li></ul></div>
+      <div class="fsec"><h4>Company</h4><ul><li><a href="#results">Case Studies</a></li><li><a href="#portfolio">Proof</a></li><li><a href="#process">How It Works</a></li><li><a href="#testimonials">Testimonials</a></li></ul></div>
+      <div class="fsec"><h4>Connect</h4><ul><li><a href="https://www.linkedin.com/in/md-shahadat-husain/" target="_blank">LinkedIn</a></li><li><a href="https://wa.me/8801959238319" target="_blank">WhatsApp</a></li><li><a href="mailto:shahadatdigitalmarketer@gmail.com">Email</a></li></ul></div>
+    </div>
+    <div class="fbot"><p>© 2026 Shahadat Husain. All rights reserved.</p><p>Performance Marketing · Worldwide</p></div>
+  </div>
+</footer>
 
-        document.querySelectorAll('.open-modal').forEach(btn => {
-            btn.addEventListener('click', openModal);
-        });
+<div class="modal" id="modal">
+  <div class="mbox">
+    <button class="mclose" onclick="closeModal()">×</button>
+    <div class="mtag">// Free — Zero Obligation</div>
+    <h2>Get Your Free<br>Ads Waste Audit</h2>
+    <div class="fmsg" id="fmsg"></div>
+    <form id="auditForm">
+      <div class="fr"><label>Your Name *</label><input type="text" name="from_name" required placeholder="e.g. John Smith"></div>
+      <div class="fr"><label>Business Email *</label><input type="email" name="from_email" required placeholder="john@yourcompany.com"></div>
+      <div class="fr"><label>Business Website *</label><input type="text" name="website" required placeholder="yourcompany.com"></div>
+      <div class="fr"><label>Type of Business *</label><input type="text" name="business_type" required placeholder="e.g. Plumber, Roofer, Electrician…"></div>
+      <div class="fr"><label>Monthly Google Ads Budget *</label>
+        <select name="ad_budget" required>
+          <option value="">Select your budget</option>
+          <option>Under £500/month</option><option>£500 – £1,500/month</option><option>£1,500 – £5,000/month</option><option>£5,000+/month</option>
+        </select>
+      </div>
+      <div class="fr"><label>Biggest frustration with your ads?</label><textarea name="message" placeholder="e.g. Clicks but no calls, tracking not working…"></textarea></div>
+      <button type="submit" class="btn-p" style="width:100%;margin-top:6px;text-align:center;display:block;">Book My Free 15-Min Audit →</button>
+    </form>
+    <p style="font-size:12px;color:var(--muted);margin-top:12px;text-align:center;">Free. No pressure. No commitment — ever.</p>
+  </div>
+</div>
 
-        document.getElementById('contactModal').addEventListener('click', (e) => {
-            if (e.target.id === 'contactModal') {
-                closeModal();
-            }
-        });
+<a href="https://wa.me/8801959238319?text=Hi%20Shahadat,%20I%20saw%20your%20website%20and%20want%20a%20free%20Google%20Ads%20audit" target="_blank" class="wa" aria-label="WhatsApp">💬</a>
 
-        // Form Submit
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formMessage = document.getElementById('formMessage');
-            const submitBtn = this.querySelector('button[type="submit"]');
-            
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+emailjs.init('0T7tiDjGh4drTDrew');
 
-            emailjs.sendForm('service_uonopr6', 'template_7zrq0tm', this)
-                .then(() => {
-                    formMessage.textContent = '✓ Booked! Check your email for next steps.';
-                    formMessage.className = 'form-message success';
-                    formMessage.style.display = 'block';
-                    this.reset();
-                    setTimeout(() => {
-                        closeModal();
-                        formMessage.style.display = 'none';
-                    }, 3000);
-                })
-                .catch(() => {
-                    formMessage.textContent = '✗ Failed to send. Please email me directly.';
-                    formMessage.className = 'form-message error';
-                    formMessage.style.display = 'block';
-                })
-                .finally(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Book My Free Audit';
-                });
-        });
+function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.open-modal').forEach(b=>b.addEventListener('click',openModal));
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+document.getElementById('auditForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const msg=document.getElementById('fmsg'),btn=this.querySelector('button[type="submit"]');
+  btn.disabled=true;btn.textContent='Sending…';
+  emailjs.sendForm('service_uonopr6','template_7zrq0tm',this)
+    .then(()=>{msg.className='fmsg ok';msg.style.display='block';msg.textContent='✓ Done! I\'ll review your ads and email your audit within 24 hours.';this.reset();setTimeout(()=>{closeModal();msg.style.display='none';},3500);})
+    .catch(()=>{msg.className='fmsg err';msg.style.display='block';msg.textContent='✗ Something went wrong. Email me: shahadatdigitalmarketer@gmail.com';})
+    .finally(()=>{btn.disabled=false;btn.textContent='Book My Free 15-Min Audit →';});
+});
+
+// SLIDER — images built in JS with proper error handling
+const imgs=[
+  {v:'v1771078919',id:'Md_Shahadat_Work_13_pjtwt6'},
+  {v:'v1771078920',id:'Md_Shahadat_Work_19_kkxeia'},
+  {v:'v1771078920',id:'Md_Shahadat_Work_18_v2txcv'},
+  {v:'v1771078920',id:'Md_Shahadat_Work_14_uv3woa'},
+  {v:'v1771078920',id:'Md_Shahadat_Work_17_jntgxl'},
+  {v:'v1771078919',id:'Md_Shahadat_Work_15_fuynrp'},
+  {v:'v1771078919',id:'Md_Shahadat_Work_11_tk0ccq'},
+  {v:'v1771078920',id:'Md_Shahadat_Work_16_etbxsn'},
+  {v:'v1771078919',id:'Md_Shahadat_Work_10_hzmspo'},
+  {v:'v1771078919',id:'Md_Shahadat_Work_12_n5vuys'}
+];
+const track=document.getElementById('slidesTrack'),dotsEl=document.getElementById('sdots');
+let cur=0,total=imgs.length,autoTimer;
+
+imgs.forEach(({v,id},i)=>{
+  const slide=document.createElement('div');slide.className='slide';
+  const img=document.createElement('img');
+  img.src=`https://res.cloudinary.com/dtemdx9l8/image/upload/${v}/${id}.jpg`;
+  img.alt=`Campaign result ${i+1}`;img.loading='lazy';
+  img.style.opacity='0';img.style.transition='opacity .5s';
+  img.onload=()=>{img.style.opacity='1';};
+  img.onerror=()=>{slide.innerHTML=`<div class="no-img"><div class="ic">📊</div><p>Campaign Dashboard ${i+1}</p></div>`;};
+  slide.appendChild(img);track.appendChild(slide);
+  const dot=document.createElement('button');
+  dot.className='sdot'+(i===0?' on':'');dot.onclick=()=>go(i);dotsEl.appendChild(dot);
+});
+
+function go(n){cur=n;track.style.transform=`translateX(-${cur*100}%)`;document.querySelectorAll('.sdot').forEach((d,i)=>d.classList.toggle('on',i===cur));}
+function nx(){go((cur+1)%total);}
+function pv(){go((cur-1+total)%total);}
+document.getElementById('nextBtn').onclick=nx;
+document.getElementById('prevBtn').onclick=pv;
+const shell=document.querySelector('.slider-wrap');
+shell.addEventListener('mouseenter',()=>clearInterval(autoTimer));
+shell.addEventListener('mouseleave',()=>{autoTimer=setInterval(nx,4500);});
+autoTimer=setInterval(nx,4500);
+
+// Scroll reveal
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){
+  e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});
+}));
+</script>
 </body>
 </html>
